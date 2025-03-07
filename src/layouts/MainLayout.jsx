@@ -2,7 +2,7 @@ import { Outlet, Link } from 'react-router-dom'
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className='flex gap-1'>
             <p>main</p>
             <Outlet />
             <Link to="/login">
