@@ -17,7 +17,7 @@ const Login = () => {
                         {/* email  */}
                         <label className="text-gray-600">
                             enter email or username
-                            <input className="w-full p-2 bg-[#e7e7e7] rounded-md border border-gray-400 mt-1 cursor-pointer" type="text" />
+                            <input className="w-full p-2 bg-[#e7e7e7] rounded-md border border-gray-400 mt-1 cursor-pointer" type="email" />
                         </label>
 
                         {/* password  */}

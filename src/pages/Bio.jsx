@@ -16,12 +16,12 @@ const Bio = () => {
           <form className="flex flex-col gap-2">
 
             {/* email  */}
-            <label>
+            <label className="cursor-pointer">
               <div className="w-[175px] h-[175px] relative border border-black/50 rounded-full mx-auto flex items-center justify-center">
                 <img src={UserImg} alt="UserImg" />
                 <div className="w-[45px] h-[45px] bg-white absolute bottom-0 right-0 border border-black/50 rounded-full"></div>
               </div>
-              <input className="hidden w-full p-2 bg-[#e7e7e7] rounded-md border border-gray-400 mt-1 cursor-pointer" type="file" />
+              <input className="hidden" type="file" />
             </label>
 
             {/* password  */}
