@@ -13,13 +13,16 @@ import { Toaster } from 'react-hot-toast'
 
 // layouts 
 import MainLayout from './layouts/MainLayout'
+import Home from './pages/Home'
 
 const App = () => {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>
-        <Route path='/' element={<MainLayout />}></Route>
+        <Route path='/' element={<MainLayout />}>
+          <Route index element={<Home />}></Route>
+        </Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<Register />}></Route>
         <Route path='/create-password' element={<CreatePassword />}></Route>

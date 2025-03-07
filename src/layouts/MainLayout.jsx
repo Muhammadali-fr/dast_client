@@ -1,25 +1,11 @@
 import { Outlet, Link } from 'react-router-dom'
+import Sidebar from '../components/Sidebar'
 
 const MainLayout = () => {
     return (
-        <div className='flex gap-1'>
-            <p>main</p>
+        <div className='w-full flex'>
+            <Sidebar />
             <Outlet />
-            <Link to="/login">
-                login
-            </Link>
-            <Link to="/register">
-                register
-            </Link>
-            <Link to="/finish-login">
-                finish login
-            </Link>
-            <Link to="/create-password">
-                create-password
-            </Link>
-            <Link to="/bio">
-                bio
-            </Link>
         </div>
     )
 }
