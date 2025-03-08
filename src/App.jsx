@@ -7,6 +7,7 @@ import Register from './pages/Register'
 import CreatePassword from "./pages/CreatePassword"
 import Bio from './pages/Bio'
 import FinishLogin from './pages/FinishLogin'
+import Profile from './pages/Profile'
 
 // toaster 
 import { Toaster } from 'react-hot-toast'
@@ -22,6 +23,7 @@ const App = () => {
       <Route>
         <Route path='/' element={<MainLayout />}>
           <Route index element={<Home />}></Route>
+          <Route path='/profile' element={<Profile />} ></Route>
         </Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<Register />}></Route>

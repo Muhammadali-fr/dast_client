@@ -15,7 +15,7 @@ import True from "../assets/true.png"
 
 const Sidebar = () => {
     return (
-        <div className='w-[300px] h-screen sticky'>
+        <div className='w-[300px] h-screen sticky top-0'>
             <div className="p-4 bg-linear-to-l from-[#4A249D] to-[#7D41FF] flex items-center justify-between">
                 <Link to='/'>
                     <img className="w-[111px]" src={Logo} alt="logoimg" />
@@ -24,75 +24,78 @@ const Sidebar = () => {
                     <img src={Dots} alt="3 dot" />
                 </div>
             </div>
-            <ul className="w-[90%] mx-auto flex flex-col gap-2 py-2">
-                <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
-                    <li className="w-full flex items-center gap-1">
-                        <img className="w-[24px]" src={Home} alt="home.png" />
-                        <p>Home</p>
-                    </li>
-                </NavLink>
 
-                <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/login">
-                    <li className="w-full flex items-center gap-1">
-                        <img className="w-[24px]" src={Saved} alt="saved.png" />
-                        <p>Saved posts</p>
-                    </li>
-                </NavLink>
+            <div className="border-r border-[#BABABA] h-screen">
+                <ul className="w-[90%] mx-auto flex flex-col gap-2 py-2">
+                    <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
+                        <li className="w-full flex items-center gap-1">
+                            <img className="w-[24px]" src={Home} alt="home.png" />
+                            <p>Home</p>
+                        </li>
+                    </NavLink>
 
-                <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/register">
-                    <li className="w-full flex items-center gap-1">
-                        <img className="w-[24px]" src={Posts} alt="images.png" />
-                        <p>Random images</p>
-                    </li>
-                </NavLink>
-            </ul>
+                    <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/login">
+                        <li className="w-full flex items-center gap-1">
+                            <img className="w-[24px]" src={Saved} alt="saved.png" />
+                            <p>Saved posts</p>
+                        </li>
+                    </NavLink>
 
-            <div className="w-[90%] h-[1px] mx-auto bg-[#396893]"></div>
+                    <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/register">
+                        <li className="w-full flex items-center gap-1">
+                            <img className="w-[24px]" src={Posts} alt="images.png" />
+                            <p>Random images</p>
+                        </li>
+                    </NavLink>
+                </ul>
 
-            <ul className="w-[90%] mx-auto flex flex-col gap-2 py-2">
+                <div className="w-[90%] h-[1px] mx-auto bg-[#396893]"></div>
 
-                <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/login">
-                    <li className="w-full flex items-center gap-1">
-                        <img className="w-[24px]" src={Profile} alt="profile.png" />
-                        <p>Your profile</p>
-                    </li>
-                </NavLink>
+                <ul className="w-[90%] mx-auto flex flex-col gap-2 py-2">
 
-                <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/register">
-                    <li className="w-full flex items-center gap-1">
-                        <img className="w-[24px]" src={Bag} alt="bag.png" />
-                        <p>Dast store</p>
-                    </li>
-                </NavLink>
-            </ul>
+                    <NavLink to="/profile" className="p-2 rounded-md hover:bg-[#E3E3E3]">
+                        <li className="w-full flex items-center gap-1">
+                            <img className="w-[24px]" src={Profile} alt="profile.png" />
+                            <p>Your profile</p>
+                        </li>
+                    </NavLink>
 
-            <div className="w-[90%] h-[1px] mx-auto bg-[#396893]"></div>
+                    <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/register">
+                        <li className="w-full flex items-center gap-1">
+                            <img className="w-[24px]" src={Bag} alt="bag.png" />
+                            <p>Dast store</p>
+                        </li>
+                    </NavLink>
+                </ul>
 
-            <ul className="w-[90%] mx-auto flex flex-col gap-2 py-2">
+                <div className="w-[90%] h-[1px] mx-auto bg-[#396893]"></div>
 
-                <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
-                    <li className="w-full flex items-center gap-1">
-                        <img className="w-[24px]" src={Valentine} alt="user.png" />
-                        <p>Funny valentine</p>
-                        <img className="w-[22px]" src={True} alt="true.jpg" />
-                    </li>
-                </Link>
-                <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
-                    <li className="w-full flex items-center gap-1">
-                        <img className="w-[24px]" src={Profile} alt="user.png" />
-                        <p>Darkens</p>
-                        <img className="w-[22px]" src={True} alt="true.jpg" />
-                    </li>
-                </Link>
-                <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
-                    <li className="w-full flex items-center gap-1">
-                        <img className="w-[24px]" src={Profile} alt="user.png" />
-                        <p>The Arty</p>
-                        <img className="w-[22px]" src={True} alt="true.jpg" />
-                    </li>
-                </Link>
-            </ul>
+                <ul className="w-[90%] mx-auto flex flex-col gap-2 py-2">
 
+                    <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
+                        <li className="w-full flex items-center gap-1">
+                            <img className="w-[24px]" src={Valentine} alt="user.png" />
+                            <p>Funny valentine</p>
+                            <img className="w-[22px]" src={True} alt="true.jpg" />
+                        </li>
+                    </Link>
+                    <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
+                        <li className="w-full flex items-center gap-1">
+                            <img className="w-[24px]" src={Profile} alt="user.png" />
+                            <p>Darkens</p>
+                            <img className="w-[22px]" src={True} alt="true.jpg" />
+                        </li>
+                    </Link>
+                    <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
+                        <li className="w-full flex items-center gap-1">
+                            <img className="w-[24px]" src={Profile} alt="user.png" />
+                            <p>The Arty</p>
+                            <img className="w-[22px]" src={True} alt="true.jpg" />
+                        </li>
+                    </Link>
+                </ul>
+
+            </div>
         </div>
     )
 }
