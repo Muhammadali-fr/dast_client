@@ -8,6 +8,9 @@ import img7 from "../assets/pics/img7.png";
 import img8 from "../assets/pics/img8.png";
 import img9 from "../assets/pics/img9.png";
 import img10 from "../assets/pics/img10.png";
+import img11 from "../assets/pics/img11.png";
+import img12 from "../assets/pics/img12.png";
+import img13 from "../assets/pics/img13.png";
 
 // pics for home
 export const gallery = [
@@ -50,6 +53,18 @@ export const gallery = [
   {
     image: img10,
     tag: ["anime", "desktop wallpaper"],
+  },
+  {
+    image: img11,
+    tag: ["car", "desktop wallpaper"],
+  },
+  {
+    image: img12,
+    tag: ["car", "desktop wallpaper"],
+  },
+  {
+    image: img13,
+    tag: ["car", "desktop wallpaper"],
   },
 ];
 

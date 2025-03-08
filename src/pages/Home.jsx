@@ -22,10 +22,10 @@ const Home = () => {
       </ul>
 
       {/* pictures  */}
-      <div className="columns-2 sm:columns-3 md:columns-4 lg:columns-5 my-5">
+      <div className="columns-2 sm:columns-3 md:columns-4 lg:columns-5 my-5 gap-0">
         {
           gallery.map((img, index) => (
-            <div key={index}>
+            <div key={index} className=' rounded-lg overflow-hidden cursor-pointer  mx-2 mb-4'>
               <img
                 className='w-full mx-auto'
                 src={img.image}
