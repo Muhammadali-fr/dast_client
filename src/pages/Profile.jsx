@@ -1,4 +1,4 @@
-import React from 'react'
+import {Link} from 'react-router-dom'
 
 // assets 
 import SettingsImg from "../assets/profile/settings.png"
@@ -44,7 +44,7 @@ const Profile = () => {
                     <div className='w-[2px] h-[30px] bg-black'></div>
                     <p><span>78</span> likes</p>
                     <div className='w-[2px] h-[30px] bg-black'></div>
-                    <p><span>1.8</span> followers</p>
+                    <p><span>1.8</span><Link to="/f"> followers</Link></p>
                 </div>
             </div>
 

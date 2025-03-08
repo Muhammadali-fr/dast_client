@@ -8,13 +8,16 @@ import CreatePassword from "./pages/CreatePassword"
 import Bio from './pages/Bio'
 import FinishLogin from './pages/FinishLogin'
 import Profile from './pages/Profile'
+import Home from './pages/Home'
+import Followers from './pages/Followers'
+import Following from './pages/Following'
 
 // toaster 
 import { Toaster } from 'react-hot-toast'
 
 // layouts 
 import MainLayout from './layouts/MainLayout'
-import Home from './pages/Home'
+import Follow from './layouts/Follow'
 
 const App = () => {
 
@@ -24,6 +27,10 @@ const App = () => {
         <Route path='/' element={<MainLayout />}>
           <Route index element={<Home />}></Route>
           <Route path='/profile' element={<Profile />} ></Route>
+          <Route path='f' element={<Follow />}>
+            <Route index element={<Followers />}></Route>
+            <Route path='following' element={<Following />}></Route>
+          </Route>
         </Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<Register />}></Route>
