@@ -1,4 +1,7 @@
 
+// react router dom 
+import { Link } from "react-router-dom"
+
 // assets 
 import Bars from "../assets/header/bars.png"
 import Plus from "../assets/header/plus.png"
@@ -15,10 +18,12 @@ const Header = () => {
         <button className="hidden"></button>
       </form>
 
-      <button className="cursor-pointer hover:opacity-95 flex items-center justify-center gap-0.5 bg-linear-to-b px-4 rounded-md h-[42px] from-[#4A249D] to-[#7D41FF] text-white">
-        <img className="w-[24px] h-[24px]" src={Plus} alt="plus.png" />
-        NEW
-      </button>
+      <Link to="/add-post">
+        <button className="cursor-pointer hover:opacity-95 flex items-center justify-center gap-0.5 bg-linear-to-b px-4 rounded-md h-[42px] from-[#4A249D] to-[#7D41FF] text-white">
+          <img className="w-[24px] h-[24px]" src={Plus} alt="plus.png" />
+          NEW
+        </button>
+      </Link>
 
       <img className="w-[42px] h-[42px]" src={Profile} alt="Profile" />
 

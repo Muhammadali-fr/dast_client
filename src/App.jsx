@@ -18,6 +18,7 @@ import { Toaster } from 'react-hot-toast'
 // layouts 
 import MainLayout from './layouts/MainLayout'
 import Follow from './layouts/Follow'
+import AddPost from './pages/AddPost'
 
 const App = () => {
 
@@ -25,18 +26,23 @@ const App = () => {
     createRoutesFromElements(
       <Route>
         <Route path='/' element={<MainLayout />}>
+
+          {/* Sidebar  */}
           <Route index element={<Home />}></Route>
           <Route path='/profile' element={<Profile />} ></Route>
           <Route path='f' element={<Follow />}>
             <Route index element={<Followers />}></Route>
             <Route path='following' element={<Following />}></Route>
           </Route>
+          <Route path='add-post' element={<AddPost />}></Route>
         </Route>
-        <Route path='/login' element={<Login />}></Route>
-        <Route path='/register' element={<Register />}></Route>
-        <Route path='/create-password' element={<CreatePassword />}></Route>
-        <Route path='/bio' element={<Bio />} ></Route>
-        <Route path='/finish-login' element={<FinishLogin />} ></Route>
+
+        {/* full page  */}
+        <Route path='login' element={<Login />}></Route>
+        <Route path='register' element={<Register />}></Route>
+        <Route path='create-password' element={<CreatePassword />}></Route>
+        <Route path='bio' element={<Bio />} ></Route>
+        <Route path='finish-login' element={<FinishLogin />} ></Route>
       </Route>
     )
   )
