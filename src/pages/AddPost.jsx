@@ -1,10 +1,23 @@
+// react 
+import { useState } from "react";
+
 // react router dom 
 import { Link } from "react-router-dom";
 
 // assets 
 import DragPlus from "../assets/addPost/drag.png"
+import ExempleImage from "../assets/addPost/exemple.jpeg"
+import ValentineImage from "../assets/valentine.png"
+import TrueImage from "../assets/true.png"
+import ThreeDots from "../assets/dotsb.png"
+
+// ant design 
+import { Select } from "antd";
 
 const AddPost = () => {
+
+    const [language, setLanguage] = useState("post");
+
     return (
         <div className="w-[95%] mx-auto">
 
@@ -29,7 +42,7 @@ const AddPost = () => {
                 {/* title  */}
                 <p className="text-center text-2xl font-semibold">Create your new post</p>
 
-                <div className="flex justify-between">
+                <div className="flex justify-between gap-5">
                     {/* form  */}
                     <form className="max-w-[317px] flex flex-col gap-5">
 
@@ -62,8 +75,42 @@ const AddPost = () => {
                     </form>
 
                     {/* view  */}
-                    <div>
-                        view
+                    <div className="w-full bg-white border border-[#BABABA] rounded-lg p-5 space-y-5">
+
+                        {/* select  */}
+                        <div className="flex items-center justify-between">
+                            <p>View engine</p>
+
+                            <Select
+                                className="w-[100px]"
+                                placeholder="Tilni tanlang"
+                                value={language}
+                                onChange={setLanguage}
+                                options={[
+                                    { value: "post", label: "post" },
+                                    { value: "details", label: "details" },
+                                ]}
+                            />
+                        </div>
+
+                        {/* view  */}
+                        <div className="w-full flex items-center justify-center">
+                            <div>
+                                <p className="text-sm w-[203px] whitespace-nowrap truncate relative top-5 text-white bg-black/30">image title here which user enters </p>
+                                <img className="w-[203px] h-[284px] object-cover object-center " src={ExempleImage} alt="ExempleImage" />
+                                <div>
+                                    <img src={ValentineImage} alt="ValentineImage" />
+                                    <div className="flex">
+                                        <div>
+                                            <p>Funny Valentine</p>
+                                            <img src={TrueImage} alt="TrueImage" />
+                                        </div>
+
+                                        <img className="w-[20px] h-[20px]" src={ThreeDots} alt="ThreeDots" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
