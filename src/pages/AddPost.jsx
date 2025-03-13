@@ -1,5 +1,5 @@
 // react 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // react router dom 
 import { Link } from "react-router-dom";
@@ -15,8 +15,19 @@ import ThreeDots from "../assets/dotsb.png"
 import { Select } from "antd";
 
 const AddPost = () => {
-
+    const [post, setPost] = useState(false)
+    const [details, setDetails] = useState(false)
     const [language, setLanguage] = useState("post");
+
+    useEffect(() => {
+        if (language === "post") {
+            setPost(true)
+            setDetails(false)
+        } else {
+            setDetails(true)
+            setPost(false)
+        }
+    }, [language])
 
     return (
         <div className="w-[95%] mx-auto">
@@ -93,14 +104,14 @@ const AddPost = () => {
                             />
                         </div>
 
-                        {/* view  */}
-                        <div className="w-full flex items-center justify-center">
+                        {/* post  */}
+                        {post && <div className="w-full flex items-center justify-center">
                             <div>
                                 <p className="text-sm w-[203px] whitespace-nowrap truncate relative top-5 text-white bg-black/30">image title here which user enters </p>
                                 <img className="rounded-lg w-[203px] h-[284px] object-cover object-center " src={ExempleImage} alt="ExempleImage" />
 
-                                <div className="flex items-center gap-2 justify-between">
-                                    <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-2 justify-between mt-2">
+                                    <div className="flex items-center justify-between gap-2">
                                         <img className="w-[23px] h-[23px]" src={ValentineImage} alt="ValentineImage" />
                                         <div className="flex items-center">
                                             <p className="text-sm">Funny Valentine</p>
@@ -111,7 +122,10 @@ const AddPost = () => {
                                     <img className="w-[20px] h-[20px]" src={ThreeDots} alt="ThreeDots" />
                                 </div>
                             </div>
-                        </div>
+                        </div>}
+
+                        {details && <p>details</p>}
+
                     </div>
                 </div>
             </div>
