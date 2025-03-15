@@ -3,3 +3,9 @@
 .active{
     background-color: #E3E3E3;
 }
+
+@media(max-width: 1350px){
+    .sidebar{
+        display: none;
+    }
+}

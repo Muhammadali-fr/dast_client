@@ -15,7 +15,7 @@ import True from "../assets/true.png"
 
 const Sidebar = () => {
     return (
-        <div className='w-[300px] h-screen sticky top-0'>
+        <div className='sidebar min-w-[250px] w-[300px] h-screen sticky top-0   '>
             <div className="p-4 bg-linear-to-l from-[#4A249D] to-[#7D41FF] flex items-center justify-between">
                 <Link to='/'>
                     <img className="w-[111px]" src={Logo} alt="logoimg" />

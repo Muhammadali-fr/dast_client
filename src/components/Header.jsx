@@ -9,12 +9,12 @@ import Profile from "../assets/valentine.png"
 const Header = () => {
   return (
     <header className='w-[95%] mx-auto flex items-center justify-between gap-2 my-2'>
-      <div className="w-[47px] h-[42px] border border-[#707070] flex items-center justify-center rounded-md cursor-pointer hover:bg-black/10">
+      <div className="w-[47px] min-w-[40px] h-[40px] border border-[#BABABA] flex items-center justify-center rounded-md cursor-pointer hover:bg-black/10">
         <img className="w-[27px]" src={Bars} alt="bar" />
       </div>
 
       <form className="w-full">
-        <input className="w-full h-[42px] border border-[#707070] rounded-md px-2" placeholder="serch anything..." type="text" />
+        <input className="w-full h-[42px] border border-[#BABABA] rounded-md px-2" placeholder="serch anything..." type="text" />
         <button className="hidden"></button>
       </form>
 
