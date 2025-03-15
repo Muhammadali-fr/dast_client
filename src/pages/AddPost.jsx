@@ -10,6 +10,9 @@ import ExempleImage from "../assets/addPost/exemple.jpeg"
 import ValentineImage from "../assets/valentine.png"
 import TrueImage from "../assets/true.png"
 import ThreeDots from "../assets/dotsb.png"
+import LikeImg from "../assets/addPost/like.png"
+import saveImg from "../assets/addPost/save.png"
+import downloadImg from "../assets/addPost/download.png"
 
 // ant design 
 import { Select } from "antd";
@@ -124,7 +127,65 @@ const AddPost = () => {
                             </div>
                         </div>}
 
-                        {details && <p>details</p>}
+                        {/* details  */}
+                        {details && <div className="flex items-center gap-5 ">
+                            <img className="min-w-[203px] w-[203px] h-[284px] rounded-lg" src={ExempleImage} alt="selected pic" />
+                            <div className="max-w-[363px] flex flex-col gap-2">
+                                <p className="font-semibold">Image title here</p>
+                                <p className="text-sm">Via our international distribution network, we supply our frozen kebab skewers throughout Europe, Africa and Asia. By establishing Dostlar Convenience Food GmbH ...</p>
+
+                                {/* likes and name  */}
+                                <div className="w-[154px] flex flex-col gap-2">
+                                    <div className="flex items-center gap-2 justify-between mt-2">
+                                        <div className="flex items-center justify-between gap-2">
+                                            <img className="w-[23px] h-[23px]" src={ValentineImage} alt="ValentineImage" />
+                                            <div className="flex items-center">
+                                                <p className="text-sm">Funny Valentine</p>
+                                                <img src={TrueImage} alt="TrueImage" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* like */}
+                                    <div className="flex flex-col">
+                                        <div className="w-full h-[29px] flex items-center gap-2 px-5 rounded-lg border border-[#BABABA]">
+                                            <img className="w-[15px] h-[15px]" src={LikeImg} alt="LikeImg" />
+                                            Like
+                                        </div>
+                                    </div>
+
+                                    {/* save  */}
+                                    <div className="flex flex-col">
+                                        <div className="w-full h-[29px] flex items-center gap-2 px-5 rounded-lg border border-[#BABABA]">
+                                            <img className="w-[15px] h-[15px]" src={saveImg} alt="saveImg" />
+                                            Save
+                                        </div>
+                                    </div>
+
+                                    {/* download  */}
+                                    <div className="flex flex-col">
+                                        <div className="w-full h-[29px] flex items-center gap-2 px-5 rounded-lg border border-[#BABABA]">
+                                            <img className="w-[15px] h-[15px]" src={downloadImg} alt="downloadImg" />
+                                            download
+                                        </div>
+                                    </div>
+
+                                    {/* likes and saves  */}
+                                    <div className="flex items-center gap-5">
+                                        <div className="flex items-center justify-center gap-1">
+                                            <img src={LikeImg} alt="like img" />
+                                            <span>12</span>
+                                        </div>
+
+                                        <div className="flex items-center justify-center gap-1">
+                                            <img src={saveImg} alt="save img" />
+                                            <span>232</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>}
 
                     </div>
                 </div>
