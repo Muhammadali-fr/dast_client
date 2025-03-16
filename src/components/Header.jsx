@@ -1,3 +1,5 @@
+// react 
+import { useState } from "react"
 
 // react router dom 
 import { Link } from "react-router-dom"
@@ -7,6 +9,13 @@ import Bars from "../assets/header/bars.png"
 import Plus from "../assets/header/plus.png"
 import Profile from "../assets/valentine.png"
 const Header = () => {
+
+  const [popUp, setPopUp] = useState(false);
+
+  const handleProfile = () => {
+    setPopUp(!popUp)
+  }
+
   return (
     <header className='w-[95%] mx-auto flex items-center justify-between gap-2 my-2'>
       <div className="w-[47px] min-w-[40px] h-[40px] border border-[#BABABA] flex items-center justify-center rounded-md cursor-pointer hover:bg-black/10">
@@ -25,7 +34,13 @@ const Header = () => {
         </button>
       </Link>
 
-      <img className="w-[42px] h-[42px]" src={Profile} alt="Profile" />
+      {/* modal  */}
+      <div className="relative">
+        <img onClick={handleProfile} className="w-[42px] min-w-[42px] h-[42px] " src={Profile} alt="Profile" />
+        {popUp && <div className="absolute top-12 right-0 w-[250px] h-[150px] backdrop-blur-md bg-black/10 border border-[#BABABA] rounded-lg">
+          fsadfsadf
+        </div>}
+      </div>
 
     </header >
   )

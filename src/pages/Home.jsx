@@ -14,7 +14,7 @@ const Home = () => {
       <ul className='flex gap-2 overflow-x-auto'>
         {
           filterButtons.map((filter, index) => (
-            <li key={index} className='py-2 px-4 border-2 border-[#9E9E9E] rounded-lg  hover:border-[#4A249D] cursor-pointer whitespace-nowrap '>
+            <li key={index} className='p-2 border border-[#9E9E9E] rounded-lg  hover:border-[#4A249D] cursor-pointer whitespace-nowrap '>
               <p>{filter.category}</p>
             </li>
           ))
