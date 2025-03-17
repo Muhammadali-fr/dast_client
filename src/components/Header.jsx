@@ -36,8 +36,8 @@ const Header = () => {
 
       {/* modal  */}
       <div className="relative">
-        <img onClick={handleProfile} className="w-[42px] min-w-[42px] h-[42px] " src={Profile} alt="Profile" />
-        {popUp && <div className="absolute top-12 right-0 w-[250px] h-[150px] backdrop-blur-md bg-black/10 border border-[#BABABA] rounded-lg">
+        <img onClick={handleProfile} className="w-[42px] min-w-[42px] h-[42px] cursor-pointer" src={Profile} alt="Profile" />
+        {popUp && <div className="absolute top-12 right-0 w-[250px] h-[150px] bg-[#e3e3e3] p-5 border border-[#BABABA] rounded-lg z-10">
           fsadfsadf
         </div>}
       </div>
