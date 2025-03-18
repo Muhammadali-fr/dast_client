@@ -10,7 +10,11 @@ const Login = () => {
             <div className="flex items-center justify-center h-[90vh]">
 
                 <div className="w-[283px] flex flex-col gap-3 ">
-                    <img className="w-[140px] mx-auto" src={Logo} alt="Logo img" />
+
+                    <Link to="/">
+                        <img className="w-[140px] mx-auto" src={Logo} alt="Logo img" />
+                    </Link>
+
                     <p className="text-xl font-bold text-center mt-2">Login</p>
                     <form className="flex flex-col gap-2">
 
@@ -28,6 +32,8 @@ const Login = () => {
 
                         {/* Button  */}
                         <button className="w-full py-3 rounded-lg bg-linear-to-b from-[#4A249D] to-[#7D41FF] text-white mt-2 cursor-pointer hover:opacity-90">complate login</button>
+
+                        <p>don't have an account <Link to="/register" className="text-blue-800 underline">register</Link></p>
                     </form>
                 </div>
             </div>
