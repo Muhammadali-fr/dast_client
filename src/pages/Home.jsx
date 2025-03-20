@@ -10,7 +10,7 @@ import { gallery } from "../data/data"
 const Home = () => {
 
   return (
-    <div className='  w-[95%]  mx-auto py-2'>
+    <div className='w-[95%]  mx-auto py-2'>
       <ul className='flex gap-2 overflow-x-auto'>
         {
           filterButtons.map((filter, index) => (
@@ -22,7 +22,7 @@ const Home = () => {
       </ul>
 
       {/* pictures  */}
-      <div className="columns-2 sm:columns-3 md:columns-4 lg:columns-5 my-5 gap-4">
+      <div className="max-w-full columns-2 sm:columns-3 lg:columns-5 my-5 gap-4">
         {
           gallery.map((img, index) => (
             <div key={index} className=' rounded-lg overflow-hidden cursor-pointer mb-4'>

@@ -1,11 +1,43 @@
 @import "tailwindcss";
 
-.active{
-    background-color: #E3E3E3;
+.active {
+  background-color: #e3e3e3;
 }
 
-@media(max-width: 1350px){
-    .sidebar{
-        display: none;
-    }
+@media (max-width: 1250px) {
+  .sidebar-hidden {
+    display: none;
+  }
+
+  .sidebar-show {
+    display: block;
+  }
+
+  .bottom-sidebar {
+    display: none;
+  }
+}
+
+@media (min-width: 1250px) {
+  .sidebar-hidden {
+    display: block;
+  }
+
+  .sidebar-show {
+    display: none;
+  }
+
+  .bottom-sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 1050px) {
+  .sidebar-show {
+    display: none;
+  }
+
+  .bottom-sidebar {
+    display: block;
+  }
 }

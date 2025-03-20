@@ -73,7 +73,7 @@ const Login = () => {
                         {/* Button  */}
                         <button
                             className="w-full py-3 rounded-lg bg-linear-to-b from-[#4A249D] to-[#7D41FF] text-white mt-2 cursor-pointer hover:opacity-90">
-                            complate login
+                            {isLoading ? ("logging...") : ("complate login")}
                         </button>
 
                         <p>don't have an account <Link to="/register" className="text-blue-800 underline">register</Link></p>
