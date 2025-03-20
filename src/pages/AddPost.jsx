@@ -33,7 +33,7 @@ const AddPost = () => {
     }, [language])
 
     return (
-        <div className="w-[95%] mx-auto">
+        <div className="w-[95%] h-screen mx-auto">
 
             {/* header  */}
             <div className="flex my-5 items-center justify-between">
