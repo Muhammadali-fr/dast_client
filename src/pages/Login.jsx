@@ -10,11 +10,15 @@ import Logo from "../assets/logo.png";
 // services 
 import authServices from "../api/services/authService";
 
+// react-hot-toast 
+import toast from "react-hot-toast";
+
 const Login = () => {
     const token = localStorage.getItem("token");
     const [formData, setFormData] = useState({});
     const [isLoading, setIsLoading] = useState(false);
 
+    // if token is exist redirect to home 
     if (token) window.location.pathname = "/";
 
 
@@ -33,17 +37,16 @@ const Login = () => {
             .login(formData)
             .then(({ message, token }) => {
                 if (!message) return alert("nomalum xatolik")
-
-                // token to localstorage 
                 localStorage.setItem("token", token)
+
             })
-            .catch((err) => console.log(err))
+            .catch((err) => toast.error(err.response.data))
             .finally(() => setIsLoading(false))
     }
 
     return (
         <>
-            <div className="flex items-center justify-center h-[90vh]">
+            <div className="flex items-center justify-center h-[95vh]">
 
                 <div className="w-[283px] flex flex-col gap-3 ">
 
@@ -80,7 +83,7 @@ const Login = () => {
                     </form>
                 </div>
             </div>
-            <div className="w-[90%] flex items-center justify-between mx-auto">
+            <div className="w-[90%] flex items-center justify-between mx-auto my-5">
                 <Link>read documentations</Link>
                 <Link>learn about us</Link>
             </div>

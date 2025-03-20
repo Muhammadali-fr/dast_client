@@ -53,7 +53,10 @@ const App = () => {
       <RouterProvider router={router} />
 
       {/* Toaster  */}
-      <Toaster />
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+      />
     </>
   )
 }
