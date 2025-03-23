@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+/* ---break---  */
+@custom-variant dark (&:is(.dark *));
 
 .active {
   background-color: #e3e3e3;
@@ -41,3 +44,11 @@
     display: block;
   }
 }
+
+/* auth bg  */
+.auth-bg {
+  background-image: url(./assets/auth/bg.png);
+  background-position: center;
+  background-size: cover;
+}
+

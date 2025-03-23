@@ -5,14 +5,23 @@ import { Link } from "react-router-dom"
 import Logo from "../assets/logo.png"
 
 const CreatePassword = () => {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        window.location.pathname = "/bio"
+    }
+
+
     return (
         <>
             <div className="flex items-center justify-center h-[95vh]">
 
                 <div className="w-[283px] flex flex-col gap-3 ">
-                    <img className="w-[140px] mx-auto" src={Logo} alt="Logo img" />
+                    <Link to="/bio">
+                        <img className="w-[140px] mx-auto" src={Logo} alt="Logo img" />
+                    </Link>
                     <p className="text-xl font-bold text-center mt-2">Create password</p>
-                    <form className="flex flex-col gap-2">
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-2">
 
                         {/* email  */}
                         <label className="text-gray-600">

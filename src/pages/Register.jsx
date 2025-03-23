@@ -1,3 +1,5 @@
+"use client"
+
 // react router dom 
 import { Link } from "react-router-dom"
 
@@ -5,49 +7,51 @@ import { Link } from "react-router-dom"
 import Logo from "../assets/logo.png"
 
 const Register = () => {
-    return (
-        <>
-            <div className="flex items-center justify-center h-[95vh]">
 
-                <div className="w-[283px] flex flex-col gap-3 ">
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        window.location.pathname = "/create-password"
+    }
+
+    return (
+        <div className="h-screen flex items-center justify-center bg-[#f5f5f5]">
+            <div className="flex items-center justify-center max-w-[933px] w-[90%] bg-white h-[525px] rounded-2xl overflow-hidden">
+                <div className="w-[90%] md:w-[40%] mx-auto h-full flex justify-center flex-col gap-2">
                     <Link to="/">
-                        <img className="w-[140px] mx-auto" src={Logo} alt="Logo img" />
+                        <img className="w-[100px]" src={Logo} alt="logo" />
                     </Link>
-                    <p className="text-xl font-bold text-center mt-2">Sing up</p>
-                    <form className="flex flex-col gap-2">
+
+                    <p className="text-lg font-semibold">Register</p>
+
+                    <form onSubmit={handleSubmit} className="flex justify-center flex-col gap-5">
 
                         {/* name  */}
-                        <label className="text-gray-600">
-                            name
-                            <input className="w-full p-2 bg-[#e7e7e7] rounded-md border border-gray-400 mt-1 cursor-pointer" type="text" />
+                        <label className="flex flex-col gap-1">
+                            <p> name <span>*</span></p>
+                            <input className="px-3 py-2 rounded-lg border border-black/40" required type="text" />
                         </label>
+
 
                         {/* username  */}
-                        <label className="text-gray-600">
-                            username
-                            <input className="w-full p-2 bg-[#e7e7e7] rounded-md border border-gray-400 mt-1 cursor-pointer" type="text" />
+                        <label className="flex flex-col gap-1">
+                            <p> username <span>*</span></p>
+                            <input className="px-3 py-2 rounded-lg border border-black/40" required type="text" />
                         </label>
 
-
-                        {/*  email  */}
-                        <label className="text-gray-600">
-                            enter email
-                            <input className="w-full p-2 bg-[#e7e7e7] rounded-md border border-gray-400 mt-1 cursor-pointer" type="email" />
+                        {/* email  */}
+                        <label className="flex flex-col gap-1">
+                            <p> email <span>*</span></p>
+                            <input className="px-3 py-2 rounded-lg border border-black/40" required type="email" />
                         </label>
 
-                        {/* Button  */}
-                        <button className="w-full py-3 rounded-lg bg-linear-to-b from-[#4A249D] to-[#7D41FF] text-white mt-2 cursor-pointer hover:opacity-90">create</button>
-
-                        <p>have an account <Link to="/login" className="text-blue-800 underline">login</Link></p>
+                        <button className="max-w-[150px] py-2 text-white cursor-pointer rounded-lg w-full bg-linear-to-r  from-[#4A249D] to-[#7D41FF] hover:opacity-90">Submit Register</button>
                     </form>
                 </div>
+                <div className="hidden md:block auth-bg w-[50%] h-full text-white p-5">
+                    <p>share your own art</p>
+                </div>
             </div>
-            <div className="w-[90%] flex items-center justify-between mx-auto">
-                <Link>read documentations</Link>
-                <Link>learn about us</Link>
-            </div>
-        </>
-
+        </div>
     )
 }
 
