@@ -14,6 +14,7 @@ import Following from './pages/Following'
 
 // toaster 
 import { Toaster } from 'react-hot-toast'
+import RegisterLayout from './layouts/RegisterLayout'
 
 // layouts 
 import MainLayout from './layouts/MainLayout'
@@ -39,10 +40,13 @@ const App = () => {
 
         {/* full page  */}
         <Route path='login' element={<Login />}></Route>
-        <Route path='register' element={<Register />}></Route>
+        {/* <Route path='register' element={<Register />}></Route> */}
         <Route path='create-password' element={<CreatePassword />}></Route>
         <Route path='bio' element={<Bio />} ></Route>
         <Route path='finish-login' element={<FinishLogin />} ></Route>
+
+        {/* multi register page  */}
+        <Route path='register' element={<RegisterLayout />}></Route>
       </Route>
     )
   )

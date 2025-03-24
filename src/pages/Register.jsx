@@ -1,16 +1,14 @@
-"use client"
-
 // react router dom 
 import { Link } from "react-router-dom"
 
 // assets 
 import Logo from "../assets/logo.png"
 
-const Register = () => {
+const Register = ({ nexStep, formData, updateform }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        window.location.pathname = "/create-password"
+        nexStep();
     }
 
     return (
@@ -28,20 +26,29 @@ const Register = () => {
                         {/* name  */}
                         <label className="flex flex-col gap-1">
                             <p> name <span>*</span></p>
-                            <input className="px-3 py-2 rounded-lg border border-black/40" required type="text" />
+                            <input
+                                value={formData.name}
+                                onChange={e => updateform({ name: e.target.value })}
+                                className="px-3 py-2 rounded-lg border border-black/40" required type="text" />
                         </label>
 
 
                         {/* username  */}
                         <label className="flex flex-col gap-1">
                             <p> username <span>*</span></p>
-                            <input className="px-3 py-2 rounded-lg border border-black/40" required type="text" />
+                            <input
+                                value={formData.username}
+                                onChange={e => updateform({ username: e.target.value })}
+                                className="px-3 py-2 rounded-lg border border-black/40" required type="text" />
                         </label>
 
                         {/* email  */}
                         <label className="flex flex-col gap-1">
                             <p> email <span>*</span></p>
-                            <input className="px-3 py-2 rounded-lg border border-black/40" required type="email" />
+                            <input
+                                value={formData.email}
+                                onChange={e => updateform({ email: e.target.value })}
+                                className="px-3 py-2 rounded-lg border border-black/40" required type="email" />
                         </label>
 
                         <button className="max-w-[150px] py-2 text-white cursor-pointer rounded-lg w-full bg-linear-to-r  from-[#4A249D] to-[#7D41FF] hover:opacity-90">Submit Register</button>
