@@ -10,15 +10,19 @@ import BackImage from "../assets/auth/back.png"
 // toast 
 import toast from "react-hot-toast"
 
-const CreatePassword = ({ nextStep, prevStep, formData, updateform }) => {
+const CreatePassword = ({ prevStep, nextStep, formData, updateform }) => {
 
-    const [repeatPass, setRepeatPass] = useState("");
+    const [repeatPass, setRepeatPass] = useState("12345678");
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if (formData.password !== repeatPass) {
             return toast.error("password don't mach")
+        }
+
+        if (repeatPass.length < 8) {
+            return toast.error("password must be at least 8 characters.")
         }
 
         // keyingi pagega otadi 

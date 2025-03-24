@@ -3,12 +3,18 @@ import { Link } from "react-router-dom"
 
 // assets 
 import Logo from "../assets/logo.png"
+import BackImage from "../assets/auth/back.png"
 
-const Register = ({ nexStep, formData, updateform }) => {
+
+const Register = ({ nextStep, formData, updateform }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        nexStep();
+        nextStep();
+    }
+
+    const handlePrev = () => {
+        window.location.pathname = "/"
     }
 
     return (
@@ -54,7 +60,10 @@ const Register = ({ nexStep, formData, updateform }) => {
                         <button className="max-w-[150px] py-2 text-white cursor-pointer rounded-lg w-full bg-linear-to-r  from-[#4A249D] to-[#7D41FF] hover:opacity-90">Submit Register</button>
                     </form>
                 </div>
-                <div className="hidden md:block auth-bg w-[50%] h-full text-white p-5">
+                <div className="hidden md:block auth-bg w-[50%] h-full text-white p-5 relative">
+                    <span onClick={handlePrev} className="absolute top-4 right-5 p-1 bg-white w-[40px] h-[40px] opacity-80 cursor-pointer hover:bg-white/90 rounded-lg  flex items-center justify-center">
+                        <img className="w-[24px] h-[24px]" src={BackImage} alt="close" />
+                    </span>
                     <p>share your own art</p>
                 </div>
             </div>

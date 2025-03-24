@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 // pages 
 import Register from "../pages/Register";
 import CreatePassword from "../pages/CreatePassword"
+import BioPage from "../pages/Bio";
 
 const RegisterLayout = () => {
 
@@ -12,7 +13,7 @@ const RegisterLayout = () => {
         username: "mukhamadali.001",
         email: "zokerzokerivic795@gmail.com",
         bio: "",
-        password: "",
+        password: "12345678",
         avatar: ""
     })
 
@@ -30,8 +31,9 @@ const RegisterLayout = () => {
 
     return (
         <div>
-            {step === 1 && <Register nexStep={nextStep} formData={formData} updateform={updateform} />}
-            {step === 2 && <CreatePassword prevStep={prevStep} nexStep={nextStep} formData={formData} updateform={updateform} />}
+            {step === 1 && <Register nextStep={nextStep} formData={formData} updateform={updateform} />}
+            {step === 2 && <CreatePassword prevStep={prevStep} nextStep={nextStep} formData={formData} updateform={updateform} />}
+            {step === 3 && <BioPage prevStep={prevStep} nexStep={nextStep} formData={formData} updateform={updateform} />}
         </div>
     )
 }
