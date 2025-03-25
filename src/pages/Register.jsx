@@ -4,12 +4,21 @@ import { Link } from "react-router-dom"
 // assets 
 import Logo from "../assets/logo.png"
 import BackImage from "../assets/auth/back.png"
+import toast from "react-hot-toast"
 
 
 const Register = ({ nextStep, formData, updateform }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (formData.name.length < 4) {
+            return toast.error("is this your real name")
+        }
+
+            
+
+        // if(formData.name.lenght)
         nextStep();
     }
 

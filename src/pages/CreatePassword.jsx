@@ -12,7 +12,7 @@ import toast from "react-hot-toast"
 
 const CreatePassword = ({ prevStep, nextStep, formData, updateform }) => {
 
-    const [repeatPass, setRepeatPass] = useState("12345678");
+    const [repeatPass, setRepeatPass] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
