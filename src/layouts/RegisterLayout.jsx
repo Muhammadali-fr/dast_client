@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+
+// react-router-dom 
+import { useNavigate } from 'react-router-dom';
 
 // pages 
 import Register from "../pages/Register";
@@ -10,15 +13,21 @@ import FinishRegister from "../pages/FinishLogin"
 import axios from "axios";
 import toast from 'react-hot-toast';
 
+// usercontext 
+import { UserContext } from '../userContext';
+
 const RegisterLayout = () => {
+
+    // user 
+    const { user } = useContext(UserContext);
+
+    // navigate 
+    const navigate = useNavigate();
+
+    // states 
     const [loading, setLoading] = useState(false);
     const [preview, setPreview] = useState(null);
     const [step, setStep] = useState(1);
-
-    const token = localStorage.getItem("token");
-    if (token) {
-        window.location.pathname = "/";
-    }
 
     // register formData 
     const [formData, setFormData] = useState({
@@ -30,15 +39,18 @@ const RegisterLayout = () => {
         avatar: null
     });
 
+    useEffect(() => {
+        if (user) navigate("/profile");
+    }, [navigate, user])
+
     // register function 
     const handleRegister = async () => {
         setLoading(true);
         try {
-            const response = await axios.post("http://localhost:5000/api/users/", formData)
-
-            localStorage.setItem("token", response.data.token);
-
-            toast.success(response.data.message)
+            const response = await axios.post("http://localhost:5000/api/users/", formData, { withCredentials: true });
+            toast.success(response.data.message);
+            navigate("/profile");
+            return;
         } catch (error) {
             // toast.error(error.response.data)
             toast.error("username or email is already used.")

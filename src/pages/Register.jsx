@@ -1,13 +1,15 @@
 // react router dom 
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 // assets 
 import Logo from "../assets/logo.png"
 import BackImage from "../assets/auth/back.png"
 import toast from "react-hot-toast"
 
-
 const Register = ({ nextStep, formData, updateform }) => {
+
+    // navigate 
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -16,15 +18,15 @@ const Register = ({ nextStep, formData, updateform }) => {
             return toast.error("is this your real name")
         }
 
-            
-
         // if(formData.name.lenght)
         nextStep();
     }
 
     const handlePrev = () => {
-        window.location.pathname = "/"
+        navigate("/")
     }
+
+    // you wanted to see register functions go to registerLayout =====
 
     return (
         <div className="h-screen flex items-center justify-center bg-[#f5f5f5]">

@@ -10,7 +10,7 @@ import { gallery } from "../data/data"
 const Home = () => {
 
   return (
-    <div className='w-[95%]  mx-auto py-2'>
+    <div className='w-[95%] min-h-screen mx-auto py-2'>
       <ul className='flex gap-2 overflow-x-auto'>
         {
           filterButtons.map((filter, index) => (

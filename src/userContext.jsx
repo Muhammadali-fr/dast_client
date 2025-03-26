@@ -16,7 +16,8 @@ const UserProvider = ({ children }) => {
                 console.log(response.daa);
             } catch (error) {
                 setUser(null);
-                toast.error("Foydalanuvchi ma’lumotlarini olishda xatolik yuz berdi.");
+                // toast.error("Foydalanuvchi ma’lumotlarini olishda xatolik yuz berdi.");
+                console.log(error);
             }
         };
         takeDoc();

@@ -1,18 +1,34 @@
-import { useCallback, useState, useEffect } from "react";
+import { useCallback, useState, useEffect, useContext } from "react";
+
+// react-router-dom 
 import { Link, useNavigate } from "react-router-dom";
+
+// axios 
 import axios from "axios";
+
+// toast 
 import toast from "react-hot-toast";
+
+// assets 
 import Logo from "../assets/logo.png";
 
+// UserContext
+import { UserContext } from "../userContext";
+
 const Login = () => {
-    const token = localStorage.getItem("token");
+    // user 
+    const user = useContext(UserContext);
+
+    // naigate 
     const navigate = useNavigate();
+
+    // states 
     const [formData, setFormData] = useState({});
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        if (token) navigate("/");
-    }, [token, navigate]);
+        if (user) navigate("/");
+    }, [user, navigate]);
 
     const handleInputChange = useCallback((field, value) => {
         setFormData((prevData) => ({
@@ -32,7 +48,6 @@ const Login = () => {
                 { withCredentials: true }
             );
 
-            localStorage.setItem("token", res.data.token);
             toast.success(res.data.message);
             console.log("Login successful:", res.data);
             navigate("/");
@@ -46,54 +61,47 @@ const Login = () => {
     };
 
     return (
-        <>
-            <div className="flex items-center justify-center h-[95vh]">
-                <div className="w-[283px] flex flex-col gap-3">
-                    <Link to="/">
-                        <img className="w-[140px] mx-auto" src={Logo} alt="Logo img" />
-                    </Link>
+        <div className="flex items-center justify-center h-screen">
+            <div className="w-[283px] flex flex-col gap-3">
+                <Link to="/">
+                    <img className="w-[140px] mx-auto" src={Logo} alt="Logo img" />
+                </Link>
 
-                    <p className="text-xl font-bold text-center mt-2">Login</p>
-                    <form className="flex flex-col gap-2" onSubmit={handleLogin}>
+                <p className="text-xl font-bold text-center mt-2">Login</p>
+                <form className="flex flex-col gap-2" onSubmit={handleLogin}>
 
-                        {/* email yoki username */}
-                        <label className="text-gray-600">
-                            Enter email or username
-                            <input
-                                onChange={e => handleInputChange("email", e.target.value)}
-                                className="w-full p-2 bg-[#e7e7e7] rounded-md border border-gray-400 mt-1 cursor-pointer"
-                                type="text"
-                            />
-                        </label>
+                    {/* email yoki username */}
+                    <label className="text-gray-600">
+                        Enter email or username
+                        <input
+                            onChange={e => handleInputChange("email", e.target.value)}
+                            className="w-full p-2 bg-[#e7e7e7] rounded-md border border-gray-400 mt-1 cursor-pointer"
+                            type="text"
+                        />
+                    </label>
 
-                        {/* password */}
-                        <label className="text-gray-600">
-                            Enter your password
-                            <input
-                                onChange={e => handleInputChange("password", e.target.value)}
-                                className="w-full p-2 bg-[#e7e7e7] rounded-md border border-gray-400 mt-1 cursor-pointer"
-                                type="password"
-                            />
-                        </label>
+                    {/* password */}
+                    <label className="text-gray-600">
+                        Enter your password
+                        <input
+                            onChange={e => handleInputChange("password", e.target.value)}
+                            className="w-full p-2 bg-[#e7e7e7] rounded-md border border-gray-400 mt-1 cursor-pointer"
+                            type="password"
+                        />
+                    </label>
 
-                        {/* Button */}
-                        <button
-                            className="w-full py-3 rounded-lg bg-gradient-to-b from-[#4A249D] to-[#7D41FF] text-white mt-2 cursor-pointer hover:opacity-90"
-                            disabled={isLoading}
-                        >
-                            {isLoading ? "Logging in..." : "Complete login"}
-                        </button>
+                    {/* Button */}
+                    <button
+                        className="w-full py-3 rounded-lg bg-gradient-to-b from-[#4A249D] to-[#7D41FF] text-white mt-2 cursor-pointer hover:opacity-90"
+                        disabled={isLoading}
+                    >
+                        {isLoading ? "Logging in..." : "Complete login"}
+                    </button>
 
-                        <p>Don't have an account? <Link to="/register" className="text-blue-800 underline">Register</Link></p>
-                    </form>
-                </div>
+                    <p>Don't have an account? <Link to="/register" className="text-blue-800 underline">Register</Link></p>
+                </form>
             </div>
-
-            <div className="w-[90%] flex items-center justify-between mx-auto my-5">
-                <Link to="/docs">Read documentations</Link>
-                <Link to="/about">Learn about us</Link>
-            </div>
-        </>
+        </div>
     );
 };
 
