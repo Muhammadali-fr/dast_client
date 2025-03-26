@@ -21,6 +21,9 @@ import MainLayout from './layouts/MainLayout'
 import Follow from './layouts/Follow'
 import AddPost from './pages/AddPost'
 
+// context
+import { UserProvider } from "./userContext";
+
 const App = () => {
 
   const router = createBrowserRouter(
@@ -52,7 +55,8 @@ const App = () => {
   )
 
   return (
-    <>
+    <UserProvider>
+
       {/* Router  */}
       <RouterProvider router={router} />
 
@@ -61,7 +65,7 @@ const App = () => {
         position="top-right"
         reverseOrder={false}
       />
-    </>
+    </UserProvider>
   )
 }
 

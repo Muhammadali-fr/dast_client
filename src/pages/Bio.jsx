@@ -33,8 +33,12 @@ const Bio = ({ prevStep, nextStep, formData, updateform, preview, setPreview }) 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setPreview(URL.createObjectURL(file))
-      updateform({ avatar: file })
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        setPreview(reader.result);
+        updateform({ avatar: reader.result })
+      }
     }
   }
 

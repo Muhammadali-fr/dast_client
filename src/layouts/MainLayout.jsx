@@ -8,13 +8,16 @@ import Bottom from "../components/Bottom"
 // react hot toast 
 import toast from 'react-hot-toast'
 
+// useContext 
+import { useContext } from 'react'
+import { UserContext } from '../userContext'
+
 const MainLayout = () => {
-    const token = localStorage.getItem("token")
 
-    if (!token) {
-        toast.error("you have to login.");
-    }
-
+    const user = useContext(UserContext);
+    console.log(user.user.name);
+    
+    
 
     return (
         <div className='w-full flex'>

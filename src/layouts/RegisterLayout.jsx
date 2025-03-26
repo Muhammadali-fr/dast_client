@@ -13,9 +13,14 @@ import toast from 'react-hot-toast';
 const RegisterLayout = () => {
     const [loading, setLoading] = useState(false);
     const [preview, setPreview] = useState(null);
-
-
     const [step, setStep] = useState(1);
+
+    const token = localStorage.getItem("token");
+    if (token) {
+        window.location.pathname = "/";
+    }
+
+    // register formData 
     const [formData, setFormData] = useState({
         name: "",
         username: "",
@@ -25,16 +30,18 @@ const RegisterLayout = () => {
         avatar: null
     });
 
+    // register function 
     const handleRegister = async () => {
         setLoading(true);
         try {
             const response = await axios.post("http://localhost:5000/api/users/", formData)
-            console.log(response);
 
-            toast.success("uraaaa")
+            localStorage.setItem("token", response.data.token);
+
+            toast.success(response.data.message)
         } catch (error) {
-            console.log(error);
-            toast.error("error while registering.")
+            // toast.error(error.response.data)
+            toast.error("username or email is already used.")
         } finally {
             setLoading(false);
         }

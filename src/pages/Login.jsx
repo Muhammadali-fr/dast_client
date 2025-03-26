@@ -7,11 +7,12 @@ import { Link } from "react-router-dom";
 // assets 
 import Logo from "../assets/logo.png";
 
-// services 
-import authServices from "../api/services/authService";
-
 // react-hot-toast 
 import toast from "react-hot-toast";
+
+
+// axios 
+import axios from "axios";
 
 const Login = () => {
     const token = localStorage.getItem("token");
@@ -29,20 +30,24 @@ const Login = () => {
         }));
     }, []);
 
-    const handleLogin = (e) => {
+
+    const handleLogin = async (e) => {
         e.preventDefault();
-        setIsLoading(true);
 
-        authServices
-            .login(formData)
-            .then(({ message, token }) => {
-                if (!message) return alert("nomalum xatolik")
-                localStorage.setItem("token", token)
+        try {
+            const res = await axios.post(
+                "http://localhost:5000/login",
+                formData,
+                { withCredentials: true }
+            );
 
-            })
-            .catch((err) => toast.error(err.response.data))
-            .finally(() => setIsLoading(false))
-    }
+            toast.success(res.data.message);
+            console.log("Login successful:", res.data);
+        } catch (error) {
+            console.log(error);
+            toast.error("login vaqtida hato");
+        }
+    };
 
     return (
         <>
