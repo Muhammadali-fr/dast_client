@@ -6,6 +6,7 @@ import Home from "../assets/bottom/homeImage.png"
 import Saved from "../assets/saved.png"
 import Posts from "../assets/bottom/gallery.png"
 import Profile from "../assets/bottom/user.png"
+import PlusImage from "../assets/bottom/plus.png"
 
 const Bottom = () => {
     return (
@@ -20,6 +21,12 @@ const Bottom = () => {
                 <NavLink className="p-3 rounded-md hover:bg-[#E3E3E3]" to="/login">
                     <li className="w-full flex items-center gap-1">
                         <img className="w-[24px]" src={Saved} alt="saved.png" />
+                    </li>
+                </NavLink>
+
+                <NavLink className="sm:hidden p-3 rounded-md hover:bg-[#E3E3E3]" to="/add-post">
+                    <li className="w-full flex items-center gap-1">
+                        <img className="w-[24px]" src={PlusImage} alt="saved.png" />
                     </li>
                 </NavLink>
 

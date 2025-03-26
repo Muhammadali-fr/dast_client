@@ -14,13 +14,10 @@ import { UserContext } from '../userContext'
 
 const MainLayout = () => {
 
-    const user = useContext(UserContext);
-    console.log(user.user.name);
-    
-    
+    // const user = useContext(UserContext); 
 
     return (
-        <div className='w-full flex'>
+        <div className='w-full min-h-screen flex'>
             <Sidebar />
             <div className='w-full bg-[#f8f6ff]'>
                 <Header />
