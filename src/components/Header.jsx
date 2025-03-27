@@ -12,15 +12,39 @@ import Profile from "../assets/valentine.png"
 // useContex 
 import { UserContext } from "../userContext"
 
+// toast 
+import toast from "react-hot-toast"
+
+// axios
+import axios from "axios"
+
+// loader 
+import Loader from "./Loader"
+
 const Header = () => {
   const { user } = useContext(UserContext);
 
-
+  // states 
   const [popUp, setPopUp] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleProfile = () => {
     setPopUp(!popUp)
   }
+
+  const handleLogout = async () => {
+    setIsLoading(true);
+    try {
+      await axios.post("http://localhost:5000/logout", {}, { withCredentials: true });
+      toast.success("You logged out from your account.");
+      window.location.reload();
+    } catch (error) {
+      toast.error("Error while logging out.");
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <header className='w-[95%] mx-auto flex items-center justify-between gap-2 my-2'>
@@ -47,7 +71,7 @@ const Header = () => {
           <div className="relative">
             <img onClick={handleProfile} className="w-[42px] min-w-[42px] cursor-pointer" src={Profile} alt="Profile" />
             {popUp && <div className="absolute top-12 right-0 w-[250px] bg-[#e3e3e3] p-2 border border-[#BABABA] rounded-lg z-10">
-              <button title="logout of your account." className="w-full bg-violet-700 text-white p-2 rounded-lg cursor-pointer hover:bg-violet-600">Logout</button>
+              <button onClick={handleLogout} title="logout of your account." className="w-full bg-violet-700 text-white p-2 rounded-lg cursor-pointer hover:bg-violet-600">{isLoading ? <Loader /> : "Logout"}</button>
             </div>}
           </div>
         </div> :

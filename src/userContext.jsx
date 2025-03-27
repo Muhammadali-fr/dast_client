@@ -13,7 +13,6 @@ const UserProvider = ({ children }) => {
             try {
                 const response = await axios.get("http://localhost:5000/profile", { withCredentials: true });
                 setUser(response.data);
-                console.log(response.daa);
             } catch (error) {
                 setUser(null);
                 // toast.error("Foydalanuvchi ma’lumotlarini olishda xatolik yuz berdi.");

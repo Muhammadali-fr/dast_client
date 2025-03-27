@@ -76,7 +76,7 @@ const RegisterLayout = () => {
             {step === 1 && <Register nextStep={nextStep} formData={formData} updateform={updateform} />}
             {step === 2 && <CreatePassword prevStep={prevStep} nextStep={nextStep} formData={formData} updateform={updateform} />}
             {step === 3 && <BioPage setPreview={setPreview} preview={preview} prevStep={prevStep} nextStep={nextStep} formData={formData} updateform={updateform} />}
-            {step === 4 && <FinishRegister handleRegister={handleRegister} preview={preview} prevStep={prevStep} nexStep={nextStep} formData={formData} updateform={updateform} />}
+            {step === 4 && <FinishRegister loading={loading} handleRegister={handleRegister} preview={preview} prevStep={prevStep} nexStep={nextStep} formData={formData} updateform={updateform} />}
         </div>
     )
 }

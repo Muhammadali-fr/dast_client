@@ -15,9 +15,12 @@ import Logo from "../assets/logo.png";
 // UserContext
 import { UserContext } from "../userContext";
 
+// Loader
+import Loader from "../components/Loader";
+
 const Login = () => {
     // user 
-    const user = useContext(UserContext);
+    const { user } = useContext(UserContext);
 
     // naigate 
     const navigate = useNavigate();
@@ -26,16 +29,17 @@ const Login = () => {
     const [formData, setFormData] = useState({});
     const [isLoading, setIsLoading] = useState(false);
 
-    useEffect(() => {
-        if (user) navigate("/");
-    }, [user, navigate]);
-
     const handleInputChange = useCallback((field, value) => {
         setFormData((prevData) => ({
             ...prevData,
             [field]: value
         }));
     }, []);
+
+    // redirect to home 
+    useEffect(() => {
+        if (user) navigate("/");
+    }, [navigate, user])
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -54,7 +58,7 @@ const Login = () => {
             window.location.reload();
         } catch (error) {
             console.log(error);
-            toast.error("Login vaqtida xato");
+            toast.error(error.response.data);
         } finally {
             setIsLoading(false);
         }
@@ -95,7 +99,7 @@ const Login = () => {
                         className="w-full py-3 rounded-lg bg-gradient-to-b from-[#4A249D] to-[#7D41FF] text-white mt-2 cursor-pointer hover:opacity-90"
                         disabled={isLoading}
                     >
-                        {isLoading ? "Logging in..." : "Complete login"}
+                        {isLoading ? <Loader /> : "Complete login"}
                     </button>
 
                     <p>Don't have an account? <Link to="/register" className="text-blue-800 underline">Register</Link></p>

@@ -29,16 +29,18 @@ const Register = ({ nextStep, formData, updateform }) => {
     // you wanted to see register functions go to registerLayout =====
 
     return (
-        <div className="h-screen flex items-center justify-center bg-[#f5f5f5]">
+        <div className="h-screen flex items-center justify-center bg-white  sm:bg-[#f5f5f5]">
             <div className="flex items-center justify-center max-w-[933px] w-[90%] bg-white h-[525px] rounded-2xl overflow-hidden">
                 <div className="w-[90%] md:w-[40%] mx-auto h-full flex justify-center flex-col gap-2">
                     <Link to="/">
                         <img className="w-[100px]" src={Logo} alt="logo" />
                     </Link>
 
-                    <p className="text-lg font-semibold">Register</p>
+                    <p className="text-lg font-semibold mt-2">Register</p>
 
-                    <form onSubmit={handleSubmit} className="flex justify-center flex-col gap-5">
+                    <p>have an account? <Link className="text-blue-700 underline" to="/login">login</Link>.</p>
+
+                    <form onSubmit={handleSubmit} className="flex justify-center flex-col gap-2">
 
                         {/* name  */}
                         <label className="flex flex-col gap-1">

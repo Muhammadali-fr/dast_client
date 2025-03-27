@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import Home from "../assets/bottom/homeImage.png"
 import Saved from "../assets/saved.png"
 import Posts from "../assets/bottom/gallery.png"
+import Bookmark from "../assets/bottom/bookmark.png"
 import Profile from "../assets/bottom/user.png"
 import PlusImage from "../assets/bottom/plus.png"
 
@@ -20,7 +21,7 @@ const Bottom = () => {
 
                 <NavLink className="p-3 rounded-md hover:bg-[#E3E3E3]" to="/login">
                     <li className="w-full flex items-center gap-1">
-                        <img className="w-[24px]" src={Saved} alt="saved.png" />
+                        <img className="w-[24px]" src={Bookmark} alt="bookmark.png" />
                     </li>
                 </NavLink>
 
