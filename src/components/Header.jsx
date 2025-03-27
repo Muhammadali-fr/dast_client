@@ -8,6 +8,7 @@ import { Link } from "react-router-dom"
 import Bars from "../assets/header/bars.png"
 import Plus from "../assets/header/plus.png"
 import Profile from "../assets/valentine.png"
+import UserImage from "../assets/bottom/user.png"
 
 // useContex 
 import { UserContext } from "../userContext"
@@ -57,7 +58,8 @@ const Header = () => {
         <button className="hidden"></button>
       </form>
 
-      {user ?
+      {user
+        ?
         <div className="flex items-center gap-2">
 
           <Link className="hidden sm:block" to="/add-post">
@@ -69,13 +71,22 @@ const Header = () => {
 
           {/* modal  */}
           <div className="relative">
-            <img onClick={handleProfile} className="w-[42px] min-w-[42px] cursor-pointer" src={Profile} alt="Profile" />
-            {popUp && <div className="absolute top-12 right-0 w-[250px] bg-[#e3e3e3] p-2 border border-[#BABABA] rounded-lg z-10">
-              <button onClick={handleLogout} title="logout of your account." className="w-full bg-violet-700 text-white p-2 rounded-lg cursor-pointer hover:bg-violet-600">{isLoading ? <Loader /> : "Logout"}</button>
-            </div>}
+            <img onClick={handleProfile} className={popUp ? "border-2 rounded-full  border-[#7008e7] w-[42px] min-w-[42px] cursor-pointer" : "border-2 rounded-full border-[#ffffff] w-[42px] min-w-[42px] cursor-pointer"} src={Profile} alt="Profile" />
+            {popUp &&
+              // overlay 
+              <div >
+                <div className="absolute flex flex-col gap-2 top-12 right-0 w-[250px] bg-[#e3e3e3] p-2 border border-[#BABABA] rounded-lg z-10">
+                  {user &&
+                    <div className="flex items-center gap-2 bg-white p-2 rounded-lg">
+                      <img className="w-[50px]" src={UserImage} alt="userImage" />
+                      <p className="font-bold">{user.name}</p>
+                    </div>}
+                  <button onClick={handleLogout} title="logout of your account." className="w-full bg-violet-700 text-white p-2 rounded-lg cursor-pointer hover:bg-violet-600">{isLoading ? <Loader /> : "Logout"}</button>
+                </div>
+              </div>}
           </div>
-        </div> :
-
+        </div>
+        :
         <div className="flex items-center gap-2">
 
           <Link to='/login'>
