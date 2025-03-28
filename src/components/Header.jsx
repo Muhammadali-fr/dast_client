@@ -36,7 +36,7 @@ const Header = () => {
   const handleLogout = async () => {
     setIsLoading(true);
     try {
-      await axios.post("http://localhost:5000/logout", {}, { withCredentials: true });
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/logout`, {}, { withCredentials: true });
       toast.success("You logged out from your account.");
       window.location.reload();
     } catch (error) {
