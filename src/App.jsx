@@ -3,9 +3,6 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 
 // pages 
 import Login from './pages/Login'
-import CreatePassword from "./pages/CreatePassword"
-import Bio from './pages/Bio'
-import FinishLogin from './pages/FinishLogin'
 import Profile from './pages/Profile'
 import Home from './pages/Home'
 import Followers from './pages/Followers'

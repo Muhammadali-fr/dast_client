@@ -11,7 +11,7 @@ const UserProvider = ({ children }) => {
     useEffect(() => {
         const takeDoc = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/profile", { withCredentials: true });
+                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/profile`, { withCredentials: true });
                 setUser(response.data);
             } catch (error) {
                 setUser(null);
@@ -21,6 +21,9 @@ const UserProvider = ({ children }) => {
         };
         takeDoc();
     }, []);
+
+    console.log(import.meta.env.VITE_API_BASE_URL);
+    
 
     return (
         <UserContext.Provider value={{ user, setUser }}>
