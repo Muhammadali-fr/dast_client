@@ -2,7 +2,7 @@ import React from 'react'
 
 const SeeImage = () => {
     return (
-        <p>fuck you.</p>
+        <p>Building ...</p>
     )
 }
 
