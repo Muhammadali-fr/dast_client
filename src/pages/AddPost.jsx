@@ -1,8 +1,8 @@
 // react 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 // react router dom 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // assets 
 import DragPlus from "../assets/addPost/drag.png"
@@ -17,11 +17,18 @@ import downloadImg from "../assets/addPost/download.png"
 // ant design 
 import { Select } from "antd";
 
+// useContex 
+import { UserContext } from "../userContext";
+
+
 const AddPost = () => {
+
+
     const [post, setPost] = useState(false)
     const [details, setDetails] = useState(false)
     const [language, setLanguage] = useState("post");
 
+    const navigate = useNavigate()
     useEffect(() => {
         if (language === "post") {
             setPost(true)

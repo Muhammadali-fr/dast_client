@@ -1,5 +1,9 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
+
+// axios 
 import axios from "axios";
+
+// toast 
 import toast from "react-hot-toast";
 
 const UserContext = createContext();
@@ -21,9 +25,6 @@ const UserProvider = ({ children }) => {
         };
         takeDoc();
     }, []);
-
-    console.log(import.meta.env.VITE_API_BASE_URL);
-    
 
     return (
         <UserContext.Provider value={{ user, setUser }}>

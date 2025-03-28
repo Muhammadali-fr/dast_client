@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 // assets 
 import SettingsImg from "../assets/profile/settings.png"
@@ -14,7 +14,7 @@ const Profile = () => {
         <div className='w-[95%] mx-auto py-2'>
 
             {/* bg-pic  */}
-            <div className='w-full h-[178px] rounded-md relative border border-[#BABABA] bg-cover bg-center' style={{ backgroundImage: `url(${BgImg})` }}>
+            <div className='w-full h-[178px] bg-[#e3e3e3] rounded-md relative border border-[#BABABA] bg-cover bg-center' style={{ backgroundImage: `url(${BgImg})` }}>
 
                 {/* settings  */}
                 <div className='w-[42px] h-[42px] bg-white flex items-center justify-center rounded-lg border border-[#b8b8b8] absolute right-5 top-5 cursor-pointer'>
