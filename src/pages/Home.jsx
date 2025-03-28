@@ -1,13 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+
+// react-router-dom 
+import { useNavigate } from "react-router-dom";
 
 // filter data 
-import { filterButtons } from '../data/data'
-import { gallery } from "../data/data"
+import { filterButtons } from '../data/data';
+import { gallery } from "../data/data";
 
 // assets  
 // import FilterImg from "../assets/home/filter.png"
 
 const Home = () => {
+  // useNavigate 
+  const navigate = useNavigate();
+
+  const handleImage = () => {
+    navigate("/img")
+  }
 
   return (
     <div className='w-[95%] min-h-screen mx-auto py-2'>
@@ -27,6 +36,7 @@ const Home = () => {
           gallery.map((img, index) => (
             <div key={index} className=' rounded-lg overflow-hidden cursor-pointer mb-4'>
               <img
+              onClick={handleImage}
                 className='w-full mx-auto'
                 src={img.image}
                 alt={img.tag}

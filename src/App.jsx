@@ -3,7 +3,6 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 
 // pages 
 import Login from './pages/Login'
-import Register from './pages/Register'
 import CreatePassword from "./pages/CreatePassword"
 import Bio from './pages/Bio'
 import FinishLogin from './pages/FinishLogin'
@@ -11,6 +10,7 @@ import Profile from './pages/Profile'
 import Home from './pages/Home'
 import Followers from './pages/Followers'
 import Following from './pages/Following'
+import SeeImage from './pages/SeeImage'
 
 // toaster 
 import { Toaster } from 'react-hot-toast'
@@ -39,14 +39,11 @@ const App = () => {
             <Route path='following' element={<Following />}></Route>
           </Route>
           <Route path='add-post' element={<AddPost />}></Route>
+          <Route path='img' element={<SeeImage />}></Route>
         </Route>
 
         {/* full page  */}
         <Route path='login' element={<Login />}></Route>
-        {/* <Route path='register' element={<Register />}></Route> */}
-        <Route path='create-password' element={<CreatePassword />}></Route>
-        <Route path='bio' element={<Bio />} ></Route>
-        <Route path='finish-login' element={<FinishLogin />} ></Route>
 
         {/* multi register page  */}
         <Route path='register' element={<RegisterLayout />}></Route>

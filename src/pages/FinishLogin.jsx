@@ -29,7 +29,7 @@ const FinishLogin = ({ preview, formData, prevStep, handleRegister, loading }) =
                     {/* Button  */}
                     <button onClick={handleRegister} className="w-full py-3 rounded-lg bg-linear-to-b from-[#4A249D] to-[#7D41FF] text-white mt-2 cursor-pointer hover:opacity-90">{loading ? <Loader /> : "FINISH & LOGIN"}</button>
 
-                    <button onClick={prevStep} type="button" className="w-full py-3 rounded-lg bg-linear-to-b from-[#4A249D] to-[#7D41FF] text-white mt-2 cursor-pointer hover:opacity-90">
+                    <button onClick={prevStep} disabled={loading} type="button" className="w-full py-3 rounded-lg bg-linear-to-b from-[#4A249D] to-[#7D41FF] text-white mt-2 cursor-pointer hover:opacity-90">
                         back to change
                     </button>
                 </div>
