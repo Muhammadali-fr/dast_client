@@ -45,6 +45,13 @@
   }
 }
 
+@media(max-width: 450px) {
+  .details{
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
 /* auth bg  */
 .auth-bg {
   background-image: url(./assets/auth/bg.png);

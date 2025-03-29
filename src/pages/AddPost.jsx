@@ -40,7 +40,7 @@ const AddPost = () => {
     }, [language])
 
     return (
-        <div className="w-[95%] h-screen mx-auto">
+        <div className="w-[95%] min-h-screen mx-auto">
 
             {/* header  */}
             <div className="flex my-5 items-center justify-between">
@@ -51,10 +51,10 @@ const AddPost = () => {
             </div>
 
             {/* Links  */}
-            <div className="flex items-center gap-5 border-b border-[#BABABA]">
-                <Link className="text-violet-700">POST</Link>
-                <Link className="relative">ADD YOUR PRODUCT <span className="px-2 rounded-lg text-center bg-violet-700 text-white absolute bottom-4 left-34">pro</span> </Link>
-                <Link className="relative">ADD NEW COLLECTION <span className="px-2 rounded-lg text-center bg-violet-700 text-white absolute bottom-4 left-38">pro</span>  </Link>
+            <div className="w-full overflow-scroll flex items-center gap-5 border-b border-[#BABABA] py-5 overscroll-x-hidden">
+                <Link className="text-violet-700 whitespace-nowrap">POST</Link>
+                <Link className="relative whitespace-nowrap">ADD YOUR PRODUCT <span className="px-2 rounded-lg text-center bg-violet-700 text-white absolute bottom-4 left-34">pro</span> </Link>
+                <Link className="relative whitespace-nowrap">ADD NEW COLLECTION <span className="px-2 rounded-lg text-center bg-violet-700 text-white absolute bottom-4 left-38">pro</span>  </Link>
             </div>
 
             {/* main  */}
@@ -63,9 +63,9 @@ const AddPost = () => {
                 {/* title  */}
                 <p className="text-center text-2xl font-semibold">Create your new post</p>
 
-                <div className="flex justify-between gap-5">
+                <div className="sm:flex space-y-5 justify-between gap-5">
                     {/* form  */}
-                    <form className="max-w-[317px] flex flex-col gap-5">
+                    <form className="sm:max-w-[317px] w-full flex flex-col gap-5">
 
                         {/* file  */}
                         <label className="flex flex-col gap-1 cursor-pointer">
@@ -104,7 +104,7 @@ const AddPost = () => {
 
                             <Select
                                 className="w-[100px]"
-                                placeholder="Tilni tanlang"
+                                placeholder="select view"
                                 value={language}
                                 onChange={setLanguage}
                                 options={[
@@ -135,11 +135,11 @@ const AddPost = () => {
                         </div>}
 
                         {/* details  */}
-                        {details && <div className="flex items-center gap-5 ">
+                        {details && <div className="details flex items-center gap-5 ">
                             <img className="min-w-[203px] w-[203px] h-[284px] rounded-lg" src={ExempleImage} alt="selected pic" />
                             <div className="max-w-[363px] flex flex-col gap-2">
                                 <p className="font-semibold">Image title here</p>
-                                <p className="text-sm">Via our international distribution network, we supply our frozen kebab skewers throughout Europe, Africa and Asia. By establishing Dostlar Convenience Food GmbH ...</p>
+                                <p className="text-sm">my favourite place</p>
 
                                 {/* likes and name  */}
                                 <div className="w-[154px] flex flex-col gap-2">
