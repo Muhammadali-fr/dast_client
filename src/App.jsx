@@ -36,7 +36,7 @@ const App = () => {
             <Route path='following' element={<Following />}></Route>
           </Route>
           <Route path='add-post' element={<AddPost />}></Route>
-          <Route path='img' element={<SeeImage />}></Route>
+          <Route path='img/:id' element={<SeeImage />}></Route>
         </Route>
 
         {/* full page  */}

@@ -15,54 +15,67 @@ import img13 from "../assets/pics/img13.png";
 // pics for home
 export const gallery = [
   {
+    id: 1,
     image: img1,
     tag: ["development theme", "phone wallpaper"],
   },
   {
+    id: 2,
     image: img2,
     tag: ["development theme", "phone wallpaper"],
   },
   {
+    id: 3,
     image: img3,
     tag: ["development theme", "phone wallpaper", "desktop wallpaper"],
   },
   {
+    id: 4,
     image: img4,
     tag: ["development theme", "desktop wallpaper"],
   },
   {
+    id: 5,
     image: img5,
     tag: ["phone wallpaper"],
   },
   {
+    id: 6,
     image: img6,
     tag: ["development theme", "phone wallpaper"],
   },
   {
+    id: 7,
     image: img7,
     tag: ["development theme", "phone wallpaper"],
   },
   {
+    id: 8,
     image: img8,
     tag: ["phone wallpaper", "anime"],
   },
   {
+    id: 9,
     image: img9,
     tag: ["phone wallpaper"],
   },
   {
+    id: 10,
     image: img10,
     tag: ["anime", "desktop wallpaper"],
   },
   {
+    id: 11,
     image: img11,
     tag: ["car", "desktop wallpaper"],
   },
   {
+    id: 12,
     image: img12,
     tag: ["car", "desktop wallpaper"],
   },
   {
+    id: 13,
     image: img13,
     tag: ["car", "desktop wallpaper"],
   },
