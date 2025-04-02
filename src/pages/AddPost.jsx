@@ -20,6 +20,9 @@ import { Select } from "antd";
 // useContex 
 import { UserContext } from "../userContext";
 
+// data 
+import { filterButtons } from "../data/data";
+
 
 const AddPost = () => {
 
@@ -27,6 +30,11 @@ const AddPost = () => {
     const [post, setPost] = useState(false)
     const [details, setDetails] = useState(false)
     const [language, setLanguage] = useState("post");
+
+    const [preview, setPreview] = useState(null);
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+    const [tags, setTags] = useState([]);
 
     const navigate = useNavigate()
     useEffect(() => {
@@ -38,6 +46,27 @@ const AddPost = () => {
             setPost(false)
         }
     }, [language])
+
+    // when pic is chooosen 
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const imgUrl = URL.createObjectURL(file);
+            setPreview(imgUrl);
+        }
+    }
+
+    // when click tags 
+    const handleTags = (e) => {
+        if (!tags.includes(e)) {
+            tags.push(e);
+        }
+    }
+
+    console.log(tags);
+
+
+
 
     return (
         <div className="w-[95%] min-h-screen mx-auto">
@@ -71,25 +100,41 @@ const AddPost = () => {
                         <label className="flex flex-col gap-1 cursor-pointer">
                             <p className="font-bold">Upload your picture</p>
                             <p className="text-gray-500 text-sm">File types supported: JPG, PNG, GIF, SVG, MP4,</p>
-                            <div className="w-full border border-[#bababa] rounded-lg h-[156px] flex flex-col items-center justify-center">
+                            <div className=" bg-white w-full border border-[#bababa] rounded-lg h-[156px] flex flex-col items-center justify-center">
                                 <img src={DragPlus} alt="drag.png" />
                                 <p className="text-[#bababa]">upload or drag here</p>
                             </div>
-                            <input className="hidden" type="file" />
+                            <input onChange={handleImageChange} className="hidden" type="file" />
                         </label>
 
                         {/* title  */}
                         <label className="w-full flex flex-col gap-1">
                             <p className="font-bold"> Title of Post</p>
-                            <input className="border border-[#BABABA] p-2 rounded-lg w-full" placeholder="title here" type="text" />
+                            <input value={title} onChange={e => setTitle(e.target.value)} className="bg-white border border-[#BABABA] p-2 rounded-lg w-full" placeholder="title here" type="text" />
                         </label>
 
                         {/* Description  */}
 
                         <label className="w-full flex flex-col gap-1">
                             <p className="font-bold">Description</p>
-                            <textarea placeholder="description" className="border border-[#BABABA] p-2 rounded-lg w-full max-h-[84px]"></textarea>
+                            <textarea value={description} onChange={e => setDescription(e.target.value)} placeholder="description" className=" bg-white border border-[#BABABA] p-2 rounded-lg w-full max-h-[84px]"></textarea>
                         </label>
+
+                        {/* tags  */}
+
+                        <div className="space-y-3">
+                            <p className="font-bold">Select tags</p>
+                            <ul className="flex items-center overflow-scroll gap-2">
+                                {
+                                    filterButtons.map((filterButton, index) => {
+                                        return <li key={index} onClick={e => handleTags(filterButton.category.toLowerCase())} className="px-2 py-0.5 text-white rounded-lg bg-[#4e26a5] cursor-pointer">
+                                            <p className="whitespace-nowrap">{filterButton.category.toLowerCase()}</p>
+                                        </li>
+                                    })
+                                }
+                            </ul>
+                        </div>
+
 
                         {/* button  */}
                         <button type="submit" className="w-full cursor-pointer py-2 text-white bg-linear-to-r from-[#4A249D] to-[#7D41FF] rounded-lg hover:opacity-90">Create</button>
@@ -118,7 +163,9 @@ const AddPost = () => {
                         {post && <div className="w-full flex items-center justify-center">
                             <div>
                                 <p className="text-sm w-[203px] whitespace-nowrap truncate relative top-5 text-white bg-black/30">image title here which user enters </p>
-                                <img className="rounded-lg w-[203px] h-[284px] object-cover object-center " src={ExempleImage} alt="ExempleImage" />
+
+                                {/* image  */}
+                                <img className="rounded-lg w-[203px] h-[284px] object-cover object-center " src={preview ? preview : ExempleImage} alt="ExempleImage" />
 
                                 <div className="flex items-center gap-2 justify-between mt-2">
                                     <div className="flex items-center justify-between gap-2">
@@ -136,10 +183,15 @@ const AddPost = () => {
 
                         {/* details  */}
                         {details && <div className="details flex items-center gap-5 ">
-                            <img className="min-w-[203px] w-[203px] h-[284px] rounded-lg" src={ExempleImage} alt="selected pic" />
+                            <img className="min-w-[203px] w-[203px] h-[284px] rounded-lg" src={preview ? preview : ExempleImage} alt="selected pic" />
+
                             <div className="max-w-[363px] flex flex-col gap-2">
-                                <p className="font-semibold">Image title here</p>
-                                <p className="text-sm">my favourite place</p>
+
+                                {/* title  */}
+                                <p className="font-semibold">{title ? title : "Image title here"}</p>
+
+                                {/* description here  */}
+                                <p className="text-sm w-full">{description ? description : "my favourite place"}</p>
 
                                 {/* likes and name  */}
                                 <div className="w-[154px] flex flex-col gap-2">

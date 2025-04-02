@@ -53,7 +53,7 @@ const Home = () => {
         }
       </ul>
 
-      <div className="max-w-full columns-2 sm:columns-3 lg:columns-5 my-5 gap-4">
+      <div className="max-w-full columns-2 sm:columns-4 lg:columns-6 my-5 gap-4">
 
         {filtered.length == 0 ?
           <div>
