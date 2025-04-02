@@ -19,7 +19,7 @@ const Bottom = () => {
                     </li>
                 </NavLink>
 
-                <NavLink className="p-3 rounded-md hover:bg-[#E3E3E3]" to="/login">
+                <NavLink className="p-3 rounded-md hover:bg-[#E3E3E3]" to="/saved">
                     <li className="w-full flex items-center gap-1">
                         <img className="w-[24px]" src={Bookmark} alt="bookmark.png" />
                     </li>

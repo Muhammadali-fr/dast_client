@@ -27,7 +27,7 @@ export const gallery = [
   {
     id: 3,
     image: img3,
-    tag: ["development theme", "phone wallpaper", "desktop wallpaper"],
+    tag: ["development theme", "phone wallpaper", "desktop wallpaper", "anime"],
   },
   {
     id: 4,
@@ -84,13 +84,10 @@ export const gallery = [
 // button categories
 export const filterButtons = [
   {
-    category: "HARD FILTERING",
+    category: "All",
   },
   {
     category: "ANIME",
-  },
-  {
-    category: "ANIMALS",
   },
   {
     category: "GAMING",

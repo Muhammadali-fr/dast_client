@@ -125,7 +125,7 @@ const Sidebar = () => {
                                     </li>
                                 </NavLink>
 
-                                <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/login">
+                                <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/saved">
                                     <li className="w-full flex items-center gap-1">
                                         <img className="w-[24px]" src={Saved} alt="saved.png" />
                                     </li>
@@ -199,7 +199,7 @@ const Sidebar = () => {
                             </li>
                         </NavLink>
 
-                        <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/login">
+                        <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/saved">
                             <li className="w-full flex items-center gap-1">
                                 <img className="w-[24px]" src={Saved} alt="saved.png" />
                             </li>
