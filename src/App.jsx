@@ -20,6 +20,7 @@ import AddPost from './pages/AddPost'
 
 // context
 import { UserProvider } from "./userContext";
+import SavedPosts from './pages/SavedPosts'
 
 const App = () => {
 
@@ -36,6 +37,7 @@ const App = () => {
             <Route path='following' element={<Following />}></Route>
           </Route>
           <Route path='add-post' element={<AddPost />}></Route>
+          <Route path='saved' element={<SavedPosts />}></Route>
           <Route path='img/:id' element={<SeeImage />}></Route>
         </Route>
 

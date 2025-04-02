@@ -46,7 +46,7 @@ const Sidebar = () => {
                                 </li>
                             </NavLink>
 
-                            <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/login">
+                            <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/saved">
                                 <li className="w-full flex items-center gap-1">
                                     <img className="w-[24px]" src={Saved} alt="saved.png" />
                                     <p>Saved posts</p>
@@ -181,7 +181,7 @@ const Sidebar = () => {
                 }
 
             </div>
-            
+
             {/* md sidebar  */}
 
             <div className='sidebar-show min-w-[60px] w-[60px] h-screen sticky top-0   '>

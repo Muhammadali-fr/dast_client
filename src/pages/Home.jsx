@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // react-router-dom 
 import { useNavigate, Link } from "react-router-dom";
@@ -12,12 +12,24 @@ import { gallery } from "../data/data";
 
 const Home = () => {
 
+  const [filtered, setFiltered] = useState([])
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    const recomendedImages = gallery.filter((img) => {
+      img.tag.some((tag) => filterButtons.map((filter) => filter.category.includes(tag)))
+    });
+
+    setFiltered(recomendedImages);
+  }, [])
+
   return (
     <div className='w-[95%] min-h-screen mx-auto py-2'>
-      <ul className='flex gap-2 overflow-x-auto'>
+      <ul className='flex gap-2 overflow-x-auto sticky top-0 w-full bg-[#f8f6ff] py-1'>
         {
           filterButtons.map((filter, index) => (
-            <li key={index} className='px-2 py-1 border border-[#bebebe] bg-white text-[#797979]   rounded-lg  hover:border-[#4A249D] hover:text-[#4A249D] cursor-pointer whitespace-nowrap '>
+            <li key={index} className='px-2 border border-[#bebebe] bg-white text-[#797979]   rounded-lg  hover:border-[#4A249D] hover:text-[#4A249D] cursor-pointer whitespace-nowrap '>
               <p>{filter.category}</p>
             </li>
           ))
