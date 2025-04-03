@@ -71,6 +71,9 @@ const RegisterLayout = () => {
         ...data
     })
 
+    console.log("asdhaskhdkahs");
+    
+
     return (
         <div>
             {step === 1 && <Register nextStep={nextStep} formData={formData} updateform={updateform} />}
