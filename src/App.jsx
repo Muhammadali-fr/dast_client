@@ -21,6 +21,7 @@ import AddPost from './pages/AddPost'
 // context
 import { UserProvider } from "./userContext";
 import SavedPosts from './pages/SavedPosts'
+import RandomImage from './pages/RandomImage'
 
 const App = () => {
 
@@ -39,6 +40,7 @@ const App = () => {
           <Route path='add-post' element={<AddPost />}></Route>
           <Route path='saved' element={<SavedPosts />}></Route>
           <Route path='img/:id' element={<SeeImage />}></Route>
+          <Route path='random/:id' element={<RandomImage />}></Route>
         </Route>
 
         {/* full page  */}

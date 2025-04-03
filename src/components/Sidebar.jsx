@@ -15,16 +15,31 @@ import Valentine from "../assets/valentine.png"
 import True from "../assets/true.png"
 import DashboardImage from "../assets/sidebar/dashboard.png"
 import whiteLogo from "../assets/sidebar/whiteLogo.svg"
+import { gallery } from "../data/data"
 
 const Sidebar = () => {
     const [isFull, setIsFull] = useState(true);
+
+    const arrayLenght = gallery.length + 1;
+
+    const firstCode = Math.floor(Math.random() * arrayLenght);
+
+    const [randomCode, setRandomCode] = useState(firstCode);
 
     const handleFull = () => {
         setIsFull(!isFull);
     }
 
-    return (
+    // random image uchun id chiqarib beradi        
+    const randomImageCode = () => {
+        setRandomCode(Math.floor(Math.random() * arrayLenght));
+    }
 
+    if (randomCode == 0) {
+        randomCode + 1;
+    }   
+
+    return (
         <>
             <div className="sidebar-hidden">
                 {isFull ? <div className=' min-w-[250px] w-[300px] h-screen sticky top-0   '>
@@ -53,7 +68,7 @@ const Sidebar = () => {
                                 </li>
                             </NavLink>
 
-                            <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/register">
+                            <NavLink onClick={randomImageCode} className="p-2 rounded-md hover:bg-[#E3E3E3]" to={`/random/${randomCode}`}>
                                 <li className="w-full flex items-center gap-1">
                                     <img className="w-[24px]" src={Posts} alt="images.png" />
                                     <p>Random images</p>
@@ -205,7 +220,7 @@ const Sidebar = () => {
                             </li>
                         </NavLink>
 
-                        <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/register">
+                        <NavLink onClick={randomImageCode} className="p-2 rounded-md hover:bg-[#E3E3E3]" to={`random/${randomCode}`}>
                             <li className="w-full flex items-center gap-1">
                                 <img className="w-[24px]" src={Posts} alt="images.png" />
                             </li>

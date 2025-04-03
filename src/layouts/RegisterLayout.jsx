@@ -69,10 +69,7 @@ const RegisterLayout = () => {
     const updateform = (data) => setFormData({
         ...formData,
         ...data
-    })
-
-    console.log("asdhaskhdkahs");
-    
+    });
 
     return (
         <div>
