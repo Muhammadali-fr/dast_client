@@ -1,3 +1,6 @@
+// react 
+import { useState } from 'react';
+
 // react router dom 
 import { NavLink } from 'react-router-dom';
 
@@ -9,7 +12,26 @@ import Bookmark from "../assets/bottom/bookmark.png"
 import Profile from "../assets/bottom/user.png"
 import PlusImage from "../assets/bottom/plus.png"
 
+// data 
+import { gallery } from '../data/data';
+
+
 const Bottom = () => {
+    const arrayLenght = gallery.length + 1;
+
+    const firstCode = Math.floor(Math.random() * arrayLenght);
+
+    const [randomCode, setRandomCode] = useState(firstCode);
+
+    // random image uchun id chiqarib beradi        
+    const randomImageCode = () => {
+        setRandomCode(Math.floor(Math.random() * arrayLenght));
+    }
+
+    if (randomCode == 0) {
+        randomCode + 1;
+    }
+
     return (
         <div className="bottom-sidebar w-full sticky bottom-0 bg-white  flex items-center justify-center z-50">
             <ul className=" mx-auto flex justify-around gap-2 py-2  items-center w-full ">
@@ -31,7 +53,7 @@ const Bottom = () => {
                     </li>
                 </NavLink>
 
-                <NavLink className="p-3 rounded-md hover:bg-[#E3E3E3]" to="/register">
+                <NavLink onClick={randomImageCode} className="p-3 rounded-md hover:bg-[#E3E3E3]" to={`/random/${randomCode}`}>
                     <li className="w-full flex items-center gap-1">
                         <img className="w-[24px]" src={Posts} alt="images.png" />
                     </li>

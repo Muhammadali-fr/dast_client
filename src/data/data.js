@@ -1,3 +1,4 @@
+import img0 from "../assets/pics/img0.png";
 import img1 from "../assets/pics/img1.png";
 import img2 from "../assets/pics/img2.png";
 import img3 from "../assets/pics/img3.png";
@@ -14,6 +15,11 @@ import img13 from "../assets/pics/img13.png";
 
 // pics for home
 export const gallery = [
+  {
+    id: 0,
+    image: img0,
+    tag: ["desktop wallpaper"],
+  },
   {
     id: 1,
     image: img1,
