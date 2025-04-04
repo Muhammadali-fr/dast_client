@@ -17,7 +17,7 @@ import { gallery } from '../data/data';
 
 
 const Bottom = () => {
-    const arrayLenght = gallery.length + 1;
+    const arrayLenght = gallery.length;
 
     const firstCode = Math.floor(Math.random() * arrayLenght);
 

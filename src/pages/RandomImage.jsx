@@ -47,7 +47,7 @@ const RandomImage = () => {
             <div className=' h-[80vh] flex items-end gap-3 overflow-hidden'>
 
                 {/* image  */}
-                <div className='h-full relative'>
+                <div className='h-full md:max-w-[80%] relative'>
 
                     {/* description */}
                     <div className='rounded-2xl w-full h-[100px] bg-linear-to-b from-[#525252] to-[#73737300] absolute top-0 flex items-start p-5 justify-between'>
@@ -60,7 +60,7 @@ const RandomImage = () => {
 
 
                     {/* main image here  */}
-                    <img className='sm:min-w-[392px] rounded-2xl h-full object-cover object-center' src={image} alt="image" />
+                    <img className='sm:min-w-[392px]  rounded-2xl h-full object-cover object-center' src={image} alt="image" />
 
                     {/* profile information  */}
 
@@ -116,7 +116,7 @@ const RandomImage = () => {
                 </div>
 
                 {/* scroll btns  */}
-                <div className='absolute top-1/2 right-5 transform -translate-x-1/2 -translate-y-1/2'>
+                <div className='hidden md:block absolute top-1/2 right-5 transform -translate-x-1/2 -translate-y-1/2'>
                     <div className='flex items-center justify-center gap-3 flex-col '>
 
                         {/* top  */}
