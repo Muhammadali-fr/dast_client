@@ -16,7 +16,11 @@ import blackChatImage from "../assets/random/blackChat.png"
 import blackShareImage from "../assets/random/blackShare.png";
 import blackMoreImage from "../assets/random/blackMore.png";
 import whiteFullImage from "../assets/random/whiteFull.png";
-import UserImage from "../assets/valentine.png"
+import UserImage from "../assets/valentine.png";
+import blackArrowImage from "../assets/random/blackArrow.png";
+import blackTopArrowImage from "../assets/random/blackTopArrow.png";
+import galleryImage from "../assets/bottom/gallery.png";
+
 
 
 const RandomImage = () => {
@@ -40,13 +44,13 @@ const RandomImage = () => {
 
 
             {/* view  */}
-            <div className='max-w-[420px] h-[80vh] flex items-end gap-3'>
+            <div className=' h-[80vh] flex items-end gap-3 overflow-hidden'>
 
                 {/* image  */}
                 <div className='h-full relative'>
 
                     {/* description */}
-                    <div className='w-full h-[100px] bg-linear-to-b from-[#525252] to-[#73737300] absolute top-0 flex items-start p-5 justify-between'>
+                    <div className='rounded-2xl w-full h-[100px] bg-linear-to-b from-[#525252] to-[#73737300] absolute top-0 flex items-start p-5 justify-between'>
                         <p className='text-white '>USA flag wallpaper</p>
 
                         <div className='cursor-pointer'>
@@ -54,7 +58,9 @@ const RandomImage = () => {
                         </div>
                     </div>
 
-                    <img className='sm:min-w-[392px] h-full object-cover object-center' src={image} alt="image" />
+
+                    {/* main image here  */}
+                    <img className='sm:min-w-[392px] rounded-2xl h-full object-cover object-center' src={image} alt="image" />
 
                     {/* profile information  */}
 
@@ -110,21 +116,23 @@ const RandomImage = () => {
                 </div>
 
                 {/* scroll btns  */}
-                <div className='flex items-center justify-center gap-3 flex-col'>
+                <div className='absolute top-1/2 right-5 transform -translate-x-1/2 -translate-y-1/2'>
+                    <div className='flex items-center justify-center gap-3 flex-col '>
 
-                    {/* top  */}
-                    <div className='w-[40px] h-[40px] rounded-full bg-black/10 flex items-center justify-center hover:bg-black/25 cursor-pointer'>
-                        <img className='w-[25px] h-[25px]' src={blackMoreImage} alt="more" />
-                    </div>
+                        {/* top  */}
+                        <div className='w-[40px] h-[40px] rounded-full bg-black/10 flex items-center justify-center hover:bg-black/25 cursor-pointer'>
+                            <img className='w-[25px] h-[25px]' src={blackTopArrowImage} alt="top" />
+                        </div>
 
-                    {/* show image  */}
-                    <div className='w-[40px] h-[40px] rounded-full bg-black/10 flex items-center justify-center hover:bg-black/25 cursor-pointer'>
-                        <img className='w-[25px] h-[25px]' src={blackMoreImage} alt="more" />
-                    </div>
+                        {/* show image  */}
+                        <div className='w-[40px] h-[40px] rounded-full bg-black/10 flex items-center justify-center hover:bg-black/25 cursor-pointer'>
+                            <img className='w-[25px] h-[25px]' src={galleryImage} alt="see image" />
+                        </div>
 
-                    {/* down  */}
-                    <div className='w-[40px] h-[40px] rounded-full bg-black/10 flex items-center justify-center hover:bg-black/25 cursor-pointer'>
-                        <img className='w-[25px] h-[25px]' src={blackMoreImage} alt="more" />
+                        {/* down  */}
+                        <div className='w-[40px] h-[40px] rounded-full bg-black/10 flex items-center justify-center hover:bg-black/25 cursor-pointer'>
+                            <img className='w-[25px] h-[25px]' src={blackArrowImage} alt="down" />
+                        </div>
                     </div>
                 </div>
 
