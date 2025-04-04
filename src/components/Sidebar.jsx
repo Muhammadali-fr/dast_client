@@ -20,7 +20,7 @@ import { gallery } from "../data/data"
 const Sidebar = () => {
     const [isFull, setIsFull] = useState(true);
 
-    const arrayLenght = gallery.length + 1;
+    const arrayLenght = gallery.length;
 
     const firstCode = Math.floor(Math.random() * arrayLenght);
 
