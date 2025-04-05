@@ -8,6 +8,10 @@ import Home from './pages/Home'
 import Followers from './pages/Followers'
 import Following from './pages/Following'
 import SeeImage from './pages/SeeImage'
+import NotFound from './pages/NotFound'
+import SavedPosts from './pages/SavedPosts'
+import RandomImage from './pages/RandomImage'
+
 
 // toaster 
 import { Toaster } from 'react-hot-toast'
@@ -20,8 +24,6 @@ import AddPost from './pages/AddPost'
 
 // context
 import { UserProvider } from "./userContext";
-import SavedPosts from './pages/SavedPosts'
-import RandomImage from './pages/RandomImage'
 
 const App = () => {
 
@@ -41,6 +43,8 @@ const App = () => {
           <Route path='saved' element={<SavedPosts />}></Route>
           <Route path='img/:id' element={<SeeImage />}></Route>
           <Route path='random/:id' element={<RandomImage />}></Route>
+          <Route path='*' element={<NotFound />}></Route>
+
         </Route>
 
         {/* full page  */}

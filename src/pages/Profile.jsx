@@ -62,18 +62,19 @@ const Profile = () => {
                     {
                         gallery.map((img, index) => (
                             <div key={index} className=' rounded-lg overflow-hidden cursor-pointer mb-4'>
-                                <img
-                                    className='w-full mx-auto'
-                                    src={img.image}
-                                    alt={img.tag}
-                                />
+                                <Link to={`/img/${img.id}`}>
+                                    <img
+                                        className='w-full mx-auto'
+                                        src={img.image}
+                                        alt={img.tag}
+                                    />
+                                </Link>
                             </div>
                         ))
                     }
                 </div>
-
+                
             </div>
-
         </div>
     )
 }
