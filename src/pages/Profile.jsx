@@ -5,6 +5,7 @@ import SettingsImg from "../assets/profile/settings.png"
 import BgImg from "../assets/profile/bg.png"
 import ValentineImg from "../assets/valentine.png"
 import TrueImg from "../assets/true.png"
+import valentineImage from "../assets/valentine.png"
 
 // data 
 import { gallery } from "../data/data"
@@ -61,19 +62,23 @@ const Profile = () => {
                 <div className="columns-2 sm:columns-3 md:columns-4 lg:columns-5 my-5 gap-4">
                     {
                         gallery.map((img, index) => (
-                            <div key={index} className=' rounded-lg overflow-hidden cursor-pointer mb-4'>
+                            <div key={index} className=' rounded-lg overflow-hidden cursor-pointer mb-4 relative'>
                                 <Link to={`/img/${img.id}`}>
                                     <img
                                         className='w-full mx-auto'
                                         src={img.image}
                                         alt={img.tag}
                                     />
+                                    <div className="flex items-center gap-2 absolute bottom-0 bg-black/10 w-full p-1 text-white backdrop-blur-sm">
+                                        <img className="w-[20px] rounded-full" src={valentineImage} alt="" />
+                                        <p className='text-sm'>mukhammadali</p>
+                                    </div>
                                 </Link>
                             </div>
                         ))
                     }
                 </div>
-                
+
             </div>
         </div>
     )

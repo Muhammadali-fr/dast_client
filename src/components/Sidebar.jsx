@@ -19,11 +19,8 @@ import { gallery } from "../data/data"
 
 const Sidebar = () => {
     const [isFull, setIsFull] = useState(true);
-
     const arrayLenght = gallery.length;
-
     const firstCode = Math.floor(Math.random() * arrayLenght);
-
     const [randomCode, setRandomCode] = useState(firstCode);
 
     const handleFull = () => {
@@ -37,12 +34,12 @@ const Sidebar = () => {
 
     if (randomCode == 0) {
         randomCode + 1;
-    }   
+    }
 
     return (
         <>
             <div className="sidebar-hidden">
-                {isFull ? <div className=' min-w-[250px] w-[300px] h-screen sticky top-0   '>
+                {isFull ? <div className=' min-w-[220px] w-[220px] h-screen sticky top-0   '>
                     <div className=" p-4 bg-linear-to-l from-[#4A249D] to-[#7D41FF] flex items-center justify-between">
                         <Link to='/'>
                             <img className="w-[111px]" src={Logo} alt="logoimg" />
@@ -87,7 +84,7 @@ const Sidebar = () => {
                                 </li>
                             </NavLink>
 
-                            <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/register">
+                            <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/store">
                                 <li className="w-full flex items-center gap-1">
                                     <img className="w-[24px]" src={Bag} alt="bag.png" />
                                     <p>Dast store</p>
@@ -146,7 +143,7 @@ const Sidebar = () => {
                                     </li>
                                 </NavLink>
 
-                                <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/register">
+                                <NavLink onClick={randomImageCode} className="p-2 rounded-md hover:bg-[#E3E3E3]" to={`random/${randomCode}`}>
                                     <li className="w-full flex items-center gap-1">
                                         <img className="w-[24px]" src={Posts} alt="images.png" />
                                     </li>
@@ -163,7 +160,7 @@ const Sidebar = () => {
                                     </li>
                                 </NavLink>
 
-                                <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/register">
+                                <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/store">
                                     <li className="w-full flex items-center gap-1">
                                         <img className="w-[24px]" src={Bag} alt="bag.png" />
                                     </li>
@@ -198,7 +195,6 @@ const Sidebar = () => {
             </div>
 
             {/* md sidebar  */}
-
             <div className='sidebar-show min-w-[60px] w-[60px] h-screen sticky top-0   '>
                 <div className=" p-4 bg-linear-to-l from-[#4A249D] to-[#7D41FF] flex items-center justify-between">
                     <Link to='/'>
@@ -237,7 +233,7 @@ const Sidebar = () => {
                             </li>
                         </NavLink>
 
-                        <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/register">
+                        <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/store">
                             <li className="w-full flex items-center gap-1">
                                 <img className="w-[24px]" src={Bag} alt="bag.png" />
                             </li>
@@ -268,7 +264,6 @@ const Sidebar = () => {
                 </div>
             </div>
         </>
-
     )
 }
 

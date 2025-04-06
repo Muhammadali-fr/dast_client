@@ -8,7 +8,8 @@ import { filterButtons } from '../data/data';
 import { gallery } from "../data/data";
 
 // assets  
-// import FilterImg from "../assets/home/filter.png"
+import valentineImage from "../assets/valentine.png"
+import NotFoundImage from "../assets/notfound/notFound.png"
 
 const Home = () => {
 
@@ -43,7 +44,7 @@ const Home = () => {
 
   return (
     <div className='w-[95%] min-h-screen mx-auto py-2'>
-      <ul className='flex gap-2 overflow-x-auto sticky top-0 w-full bg-[#f8f6ff] py-1'>
+      <ul className='flex gap-2 overflow-x-auto sticky top-0 w-full bg-[#f8f6ff] py-1 z-10'>
         {
           filterButtons.map((filter, index) => (
             <li onClick={() => handleFilterBtn(filter.category)} key={index} className='px-2 border border-[#bebebe] bg-white text-[#797979]   rounded-lg  hover:border-[#4A249D] hover:text-[#4A249D] cursor-pointer whitespace-nowrap '>
@@ -53,31 +54,37 @@ const Home = () => {
         }
       </ul>
 
-      <div className="max-w-full columns-2 sm:columns-4 lg:columns-6 my-5 gap-4">
 
-        {filtered.length == 0 ?
-          <div>
-            <p>no pics</p>
+      {filtered.length == 0 ?
+        <div className='w-full h-[80vh] mx-auto flex items-center justify-center flex-col space-y-3'>
+          <img className='md:w-[40%]' src={NotFoundImage} alt="not found image" />
+          <p className='font-bold text-2xl'>Oops! There is no images.</p>
+        </div>  
+        :
+        (
+          <div className="max-w-full columns-2 sm:columns-4 lg:columns-6 my-5 gap-4">
+
+            {
+              filtered.map((img, index) => (
+                <div key={index} className='rounded-lg overflow-hidden cursor-pointer mb-4 relative'>
+                  <Link to={`img/${img.id}`}>
+                    <img
+                      className='w-full mx-auto'
+                      src={img.image}
+                      alt={img.tag}
+                    />
+                    <div className="flex items-center gap-2 absolute bottom-0 bg-black/10 w-full p-1 text-white backdrop-blur-sm">
+                      <img className="w-[20px] rounded-full" src={valentineImage} alt="" />
+                      <p className='text-sm'>mukhammadali</p>
+                    </div>
+                  </Link>
+                </div>
+              ))
+            }
           </div>
-          :
-          (
-            filtered.map((img, index) => (
-              <div key={index} className='rounded-lg overflow-hidden cursor-pointer mb-4'>
-                <Link to={`img/${img.id}`}>
-                  <img
-                    className='w-full mx-auto'
-                    src={img.image}
-                    alt={img.tag}
-                  />
-                </Link>
-              </div>
-            ))
-          )
-        }
 
-      </div>
-
-
+        )
+      }
 
     </div>
   )
