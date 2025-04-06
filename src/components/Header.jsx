@@ -5,7 +5,7 @@ import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 
 // assets 
-import Bars from "../assets/header/bars.png"
+import Bars from "../assets/bar.png"
 import Plus from "../assets/header/plus.png"
 import Profile from "../assets/valentine.png"
 import UserImage from "../assets/bottom/user.png"

@@ -108,3 +108,40 @@ export const filterButtons = [
     category: "PHONE WALLPAPER",
   },
 ];
+
+// assets
+import checked from "../assets/true.png";
+
+// coin types
+export const coins = [
+  {
+    iconImage: checked,
+    borderColor: "#572cb8",
+    price: 2000,
+  },
+  {
+    iconImage: checked,
+    borderColor: "#572cb8",
+    price: 2000,
+  },
+  {
+    iconImage: checked,
+    borderColor: "#572cb8",
+    price: 2000,
+  },
+  {
+    iconImage: checked,
+    borderColor: "#572cb8",
+    price: 2000,
+  },
+  {
+    iconImage: checked,
+    borderColor: "#572cb8",
+    price: 2000,
+  },
+  {
+    iconImage: checked,
+    borderColor: "#572cb8",
+    price: 2000,
+  },
+];
