@@ -14,10 +14,10 @@ import NotFoundImage from "../assets/notfound/notFound.png"
 const Home = () => {
 
   const [filtered, setFiltered] = useState([]);
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState("All");
 
   const handleFilterBtn = (filterWord) => {
-    setFilter(filterWord === filter ? "" : filterWord); // Agar shu kategoriya bosilsa, filterni tozalash
+    setFilter(filterWord === filter ? "All" : filterWord); // Agar shu kategoriya bosilsa, filterni tozalash
   };
 
 
@@ -46,20 +46,28 @@ const Home = () => {
     <div className='w-[95%] min-h-screen mx-auto py-2'>
       <ul className='flex gap-2 overflow-x-auto sticky top-0 w-full bg-[#f8f6ff] py-1 z-10'>
         {
-          filterButtons.map((filter, index) => (
-            <li onClick={() => handleFilterBtn(filter.category)} key={index} className='px-2 border border-[#bebebe] bg-white text-[#797979]   rounded-lg  hover:border-[#4A249D] hover:text-[#4A249D] cursor-pointer whitespace-nowrap '>
-              <p>{filter.category}</p>
+          filterButtons.map((filterBtn, index) => (
+            <li
+              onClick={() => handleFilterBtn(filterBtn.category)}
+              key={index}
+              className={`px-2 py-1 border rounded-lg cursor-pointer transition-all duration-200 whitespace-nowrap
+    ${filter === filterBtn.category
+                  ? "bg-[#4A249D] text-white border-[#4A249D]"
+                  : "bg-white text-[#8d8d8e] border-[#bebebe] hover:border-[#4A249D] hover:text-[#4A249D]"
+                }`}
+            >
+              <p className="text-sm font-medium">{filterBtn.category}</p>
             </li>
+
           ))
         }
       </ul>
-
 
       {filtered.length == 0 ?
         <div className='w-full h-[80vh] mx-auto flex items-center justify-center flex-col space-y-3'>
           <img className='md:w-[40%]' src={NotFoundImage} alt="not found image" />
           <p className='font-bold text-2xl'>Oops! There is no images.</p>
-        </div>  
+        </div>
         :
         (
           <div className="max-w-full columns-2 sm:columns-4 lg:columns-6 my-5 gap-4">
