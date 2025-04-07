@@ -9,8 +9,49 @@ import { coins } from "../data/data";
 // assets 
 import CloseImage from "../assets/close.png";
 
+// toast 
+import toast from 'react-hot-toast';
+
+// axios 
+import axios from "axios";
+
+// loader 
+import Loader from "../components/Loader"
+
 const Store = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [isloading, setIsLoading] = useState(false);
+    const token = '7166400728:AAENydLWNB8DEtbhVjT9X3QJj3NOxtNnNM4';
+    const chatId = '5724981036';
+
+    const sendMessage = async (e) => {
+        e.preventDefault();
+        setIsLoading(true);
+
+        if (!email || !message) {
+            toast.error("fill all inputs.")
+            return;
+        }
+
+        try {
+            const response = await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
+                chat_id: chatId,
+                text: `Dast\n Email: ${email}\nMessage: ${message}`
+            });
+
+            if (response.status === 200) {
+                toast.success("Message send succesfully.")
+                setEmail("");
+                setMessage("");
+            }
+        } catch (error) {
+            toast.error("error while sending message.")
+            console.log(error);
+
+        } finally { setIsLoading(false); }
+    }
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -67,19 +108,21 @@ const Store = () => {
                     <div className='w-full sm:w-[500px] h-[300px] bg-white rounded-lg flex items-center justify-center flex-col space-y-3 relative'>
                         <p className='text-lg font-semibold'>Contact</p>
 
-                        <form className='w-[90%] flex flex-col space-y-3'>
+                        <form onSubmit={sendMessage} className='w-[90%] flex flex-col space-y-3'>
                             {/* email  */}
                             <label className='text-[#393939] flex flex-col gap-1'>
                                 <p>email <span className='text-blue-800'>*</span></p>
-                                <input placeholder='email' className='text-black w-full border border-[#636363] rounded-lg p-2' type="text" />
+                                <input value={email} onChange={e => setEmail(e.target.value)} placeholder='email' className='text-black w-full border border-[#636363] rounded-lg p-2' type="email" />
                             </label>
 
                             {/* textarea  */}
                             <label className='flex flex-col gap-1 text-[#393939]'>
                                 <p>message here <span className='text-blue-800'>*</span></p>
-                                <textarea placeholder='message here' className='text-black border border-[#636363] rounded-lg p-2'></textarea>
+                                <textarea value={message} onChange={e => setMessage(e.target.value)} placeholder='message here' className='text-black border border-[#636363] rounded-lg p-2'></textarea>
                             </label>
-                            <button className='p-2  rounded-2xl text-white cursor-pointer bg-linear-to-r from-[#4A249D] to-[#7D41FF] hover:opacity-90'>Send</button>
+
+                            {/* submit btn  */}
+                            <button className='p-2  rounded-2xl text-white cursor-pointer bg-linear-to-r from-[#4A249D] to-[#7D41FF] hover:opacity-90'>{isloading ? <Loader /> : "send"}</button>
                         </form>
 
                         {/* close btn  */}

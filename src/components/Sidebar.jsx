@@ -6,11 +6,11 @@ import { Link, NavLink } from "react-router-dom"
 // assets 
 import Logo from "../assets/whiteLogo.png"
 import Dots from "../assets/dots.png"
-import Home from "../assets/home.png"
-import Saved from "../assets/saved.png"
-import Posts from "../assets/posts.png"
-import Profile from "../assets/profile.png"
-import Bag from "../assets/bag.png"
+import Home from "../assets/bottom/homeImage.png"
+import Saved from "../assets/bottom/bookmark.png"
+import Posts from "../assets/bottom/gallery.png"
+import Profile from "../assets//bottom/user.png"
+import Bag from "../assets/sidebar/card.png"
 import Valentine from "../assets/valentine.png"
 import True from "../assets/true.png"
 import DashboardImage from "../assets/sidebar/dashboard.png"
@@ -120,7 +120,7 @@ const Sidebar = () => {
 
                             {/* ads  */}
                             <div title="you can add ads here" className="w-[90%] mb-3 h-[120px] bg-[#E3E3E3] rounded-lg flex items-center justify-center absolute bottom-0">
-                               <p>AD</p>
+                                <p>AD</p>
                             </div>
                         </ul>
 
