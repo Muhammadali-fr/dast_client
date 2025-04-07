@@ -12,6 +12,7 @@ import NotFound from './pages/NotFound'
 import SavedPosts from './pages/SavedPosts'
 import RandomImage from './pages/RandomImage'
 import Store from './pages/Store';
+import StoreCoin from './pages/StoreCoin'
 
 // toaster 
 import { Toaster } from 'react-hot-toast'
@@ -44,6 +45,7 @@ const App = () => {
           <Route path='img/:id' element={<SeeImage />}></Route>
           <Route path='random/:id' element={<RandomImage />}></Route>
           <Route path='store' element={<Store />}></Route>
+          <Route path='store/coin' element={<StoreCoin />}></Route>
 
           {/* Not Found Page  */}
           <Route path='*' element={<NotFound />}></Route>

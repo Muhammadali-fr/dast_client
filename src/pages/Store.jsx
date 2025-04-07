@@ -41,7 +41,7 @@ const Store = () => {
                     {
                         coins.map((coin, id) => (
                             <li key={id}>
-                                <Link className='rounded-lg min-w-[100px] sm:min-w-[150px] min-h-[100px] sm:min-h-[150px] flex items-center justify-center border-2 border-[#572cb8]'>
+                                <Link to="coin" className='rounded-lg min-w-[100px] sm:min-w-[150px] min-h-[100px] sm:min-h-[150px] flex items-center justify-center border-2 border-[#572cb8]'>
                                     <img className='w-[40px] h-[40px]' src={coin.iconImage} alt="icon image" />
                                 </Link>
                                 <p className='text-center'>{coin.price} coins</p>
@@ -52,7 +52,7 @@ const Store = () => {
             </div>
 
             {/* contact  */}
-            <div className='flex items-center justify-between'>
+            <div className='flex items-center justify-between bg-white p-3 rounded-lg'>
                 <p className='text-xl sm:text-3xl font-bold'>NEED SUPPORT?</p>
 
                 {/* contact btn  */}
@@ -64,7 +64,7 @@ const Store = () => {
                 isOpen && <div onClick={handleBack} className='fixed inset-0 backdrop-blur-sm bg-black/30 flex sm:items-center items-end justify-center z-100'>
 
                     {/* madal contont  */}
-                    <div className='w-[500px] h-[300px] bg-white rounded-lg flex items-center justify-center flex-col space-y-3 relative'>
+                    <div className='w-[95%] sm:w-[500px] h-[300px] bg-white rounded-lg flex items-center justify-center flex-col space-y-3 relative'>
                         <p className='text-lg font-semibold'>Contact</p>
 
                         <form className='w-[95%] sm:w-[90%] flex flex-col space-y-3'>
@@ -98,14 +98,14 @@ const Store = () => {
                 {
                     coins.map((coin, id) => (
                         <li key={id}>
-                            <Link className='rounded-lg min-w-[100px] sm:min-w-[150px] min-h-[100px] sm:min-h-[150px] flex items-center justify-center border-2 border-[#572cb8]'>
+                            <Link to="coin" className='rounded-lg min-w-[100px] sm:min-w-[150px] min-h-[100px] sm:min-h-[150px] flex items-center justify-center border-2 border-[#572cb8]'>
                                 <img className='w-[40px] h-[40px]' src={coin.iconImage} alt="icon image" />
                             </Link>
                             <p className='text-center'>{coin.price} coins</p>
                         </li>
                     ))
                 }
-            </ul>   
+            </ul>
 
         </div>
     )

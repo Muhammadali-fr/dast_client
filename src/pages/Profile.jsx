@@ -33,7 +33,7 @@ const Profile = () => {
 
                 {/* name  */}
                 <div className='flex items-center justify-center font-bold text-2xl whitespace-nowrap gap-1'>
-                    <p>Funny Valentine</p> <img src={TrueImg} alt="trueImg" />
+                    <p>Funny Valentine</p> <img className='w-[25px]' src={TrueImg} alt="trueImg" />
                 </div>
 
                 {/* bio  */}

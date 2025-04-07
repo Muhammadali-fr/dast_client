@@ -42,7 +42,7 @@ const Sidebar = () => {
                 {isFull ? <div className=' min-w-[220px] w-[220px] h-screen sticky top-0   '>
                     <div className=" p-4 bg-linear-to-l from-[#4A249D] to-[#7D41FF] flex items-center justify-between">
                         <Link to='/'>
-                            <img className="w-[111px]" src={Logo} alt="logoimg" />
+                            <img className="w-[90px]" src={Logo} alt="logoimg" />
                         </Link>
                         <div onClick={handleFull} className="p-2 w-[40px] h-[40px] hover:bg-white/20 flex items-center justify-center rounded-md cursor-pointer">
                             <img src={DashboardImage} alt="dash icon" />
@@ -98,28 +98,35 @@ const Sidebar = () => {
 
                             <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
                                 <li className="w-full flex items-center gap-1">
-                                    <img className="w-[24px]" src={Valentine} alt="user.png" />
+                                    <img className="w-[24px] rounded-full" src={Valentine} alt="user.png" />
                                     <p>Funny valentine</p>
-                                    <img className="w-[22px]" src={True} alt="true.jpg" />
+                                    <img className="w-[15px]" src={True} alt="true.jpg" />
                                 </li>
                             </Link>
                             <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
                                 <li className="w-full flex items-center gap-1">
-                                    <img className="w-[24px]" src={Profile} alt="user.png" />
+                                    <img className="w-[24px] rounded-full" src={Profile} alt="user.png" />
                                     <p>Darkens</p>
-                                    <img className="w-[22px]" src={True} alt="true.jpg" />
+                                    <img className="w-[15px]" src={True} alt="true.jpg" />
                                 </li>
                             </Link>
                             <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
                                 <li className="w-full flex items-center gap-1">
-                                    <img className="w-[24px]" src={Profile} alt="user.png" />
+                                    <img className="w-[24px] rounded-full" src={Profile} alt="user.png" />
                                     <p>The Arty</p>
-                                    <img className="w-[22px]" src={True} alt="true.jpg" />
+                                    <img className="w-[15px]" src={True} alt="true.jpg" />
                                 </li>
                             </Link>
+
+                            {/* ads  */}
+                            <div title="you can add ads here" className="w-[90%] mb-3 h-[120px] bg-[#E3E3E3] rounded-lg flex items-center justify-center absolute bottom-0">
+                               <p>AD</p>
+                            </div>
                         </ul>
 
                     </div>
+
+
                 </div>
                     :
                     <div className='min-w-[60px] w-[60px] h-screen sticky top-0   '>
@@ -173,17 +180,17 @@ const Sidebar = () => {
 
                                 <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
                                     <li className="w-full flex items-center gap-1">
-                                        <img className="w-[24px]" src={Valentine} alt="user.png" />
+                                        <img className="w-[24px] rounded-full" src={Valentine} alt="user.png" />
                                     </li>
                                 </Link>
                                 <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
                                     <li className="w-full flex items-center gap-1">
-                                        <img className="w-[24px]" src={Profile} alt="user.png" />
+                                        <img className="w-[24px] rounded-full" src={Profile} alt="user.png" />
                                     </li>
                                 </Link>
                                 <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
                                     <li className="w-full flex items-center gap-1">
-                                        <img className="w-[24px]" src={Profile} alt="user.png" />
+                                        <img className="w-[24px] rounded-full" src={Profile} alt="user.png" />
                                     </li>
                                 </Link>
                             </ul>

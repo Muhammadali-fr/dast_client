@@ -82,8 +82,8 @@ const AddPost = () => {
             {/* Links  */}
             <div className="w-full overflow-scroll flex items-center gap-5 border-b border-[#BABABA] py-5 overscroll-x-hidden">
                 <Link className="text-violet-700 whitespace-nowrap">POST</Link>
-                <Link className="relative whitespace-nowrap">ADD YOUR PRODUCT <span className="px-2 rounded-lg text-center bg-violet-700 text-white absolute bottom-4 left-34">pro</span> </Link>
-                <Link className="relative whitespace-nowrap">ADD NEW COLLECTION <span className="px-2 rounded-lg text-center bg-violet-700 text-white absolute bottom-4 left-38">pro</span>  </Link>
+                <Link to="/store" className="relative whitespace-nowrap">ADD YOUR PRODUCT <span className="px-2 rounded-lg text-center bg-violet-700 text-white absolute bottom-4 left-34">pro</span> </Link>
+                <Link to="/store" className="relative whitespace-nowrap">ADD NEW COLLECTION <span className="px-2 rounded-lg text-center bg-violet-700 text-white absolute bottom-4 left-38">pro</span>  </Link>
             </div>
 
             {/* main  */}
@@ -169,10 +169,10 @@ const AddPost = () => {
 
                                 <div className="flex items-center gap-2 justify-between mt-2">
                                     <div className="flex items-center justify-between gap-2">
-                                        <img className="w-[23px] h-[23px]" src={ValentineImage} alt="ValentineImage" />
-                                        <div className="flex items-center">
+                                        <img className="w-[23px] h-[23px] rounded-full" src={ValentineImage} alt="ValentineImage" />
+                                        <div className="flex items-center gap-2">
                                             <p className="text-sm">Funny Valentine</p>
-                                            <img src={TrueImage} alt="TrueImage" />
+                                            <img className="w-[20px]" src={TrueImage} alt="TrueImage" />
                                         </div>
 
                                     </div>
@@ -197,10 +197,10 @@ const AddPost = () => {
                                 <div className="w-[154px] flex flex-col gap-2">
                                     <div className="flex items-center gap-2 justify-between mt-2">
                                         <div className="flex items-center justify-between gap-2">
-                                            <img className="w-[23px] h-[23px]" src={ValentineImage} alt="ValentineImage" />
-                                            <div className="flex items-center">
+                                            <img className="w-[23px] h-[23px] rounded-full" src={ValentineImage} alt="ValentineImage" />
+                                            <div className="flex items-center gsp-1">
                                                 <p className="text-sm">Funny Valentine</p>
-                                                <img src={TrueImage} alt="TrueImage" />
+                                                <img className="w-[20px]" src={TrueImage} alt="TrueImage" />
                                             </div>
                                         </div>
                                     </div>
