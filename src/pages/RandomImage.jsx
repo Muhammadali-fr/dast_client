@@ -60,7 +60,7 @@ const RandomImage = () => {
 
 
                     {/* main image here  */}
-                    <img className='sm:min-w-[392px]  rounded-2xl h-full object-cover object-center' src={image} alt="image" />
+                    <img className='w-full  rounded-2xl h-full object-cover object-center' src={image} alt="image" />
 
                     {/* profile information  */}
 

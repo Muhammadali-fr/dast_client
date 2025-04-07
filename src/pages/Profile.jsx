@@ -1,3 +1,6 @@
+import { useState } from 'react'
+
+// react - router - dom
 import { Link } from 'react-router-dom'
 
 // assets 
@@ -6,19 +9,43 @@ import BgImg from "../assets/profile/bg.png"
 import ValentineImg from "../assets/valentine.png"
 import TrueImg from "../assets/true.png"
 import valentineImage from "../assets/valentine.png"
+import CloseImage from "../assets/close.png";
+import DragPlus from "../assets/addPost/drag.png"
 
 // data 
 import { gallery } from "../data/data"
 
 const Profile = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [bgImage, setBgImage] = useState(BgImg);
+
+    const handleModal = () => {
+        setIsOpen(!isOpen);
+    }
+
+    const handleBack = (e) => {
+        if (e.target === e.currentTarget) {
+            setIsOpen(!isOpen);
+        };
+    };
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const fileUrl = URL.createObjectURL(file);
+            setBgImage(fileUrl)
+            setIsOpen(false);
+        }
+    }
+
     return (
         <div className='w-[95%] mx-auto py-2'>
 
             {/* bg-pic  */}
-            <div className='w-full h-[178px] bg-[#e3e3e3] rounded-md relative border border-[#BABABA] bg-cover bg-center' style={{ backgroundImage: `url(${BgImg})` }}>
+            <div className='w-full h-[178px] bg-[#e3e3e3] rounded-md relative border border-[#BABABA] bg-cover bg-center' style={{ backgroundImage: `url(${bgImage ? bgImage : BgImg})` }}>
 
                 {/* settings  */}
-                <div className='w-[42px] h-[42px] bg-white flex items-center justify-center rounded-lg border border-[#b8b8b8] absolute right-5 top-5 cursor-pointer'>
+                <div onClick={handleModal} className='w-[42px] h-[42px] p-1 bg-white flex items-center justify-center rounded-lg border border-[#b8b8b8] absolute right-5 top-5 cursor-pointer'>
                     <img src={SettingsImg} alt="SettingsImg" />
                 </div>
 
@@ -80,6 +107,33 @@ const Profile = () => {
                 </div>
 
             </div>
+
+            {/* modal  */}
+            {
+                isOpen && <div onClick={handleBack} className='fixed inset-0 backdrop-blur-sm bg-black/30 flex items-end sm:items-center justify-center z-100'>
+                    {/* madal contont  */}
+                    <div className='w-full sm:w-[500px] pt-10 pb-0 bg-white rounded-lg flex items-center justify-center flex-col space-y-3 relative'>
+                        <p className='text-lg font-semibold absolute top-2'>Choose file</p>
+
+                        {/* input file  */}
+                        <label className="w-[95%] flex flex-col gap-1 cursor-pointer">
+                            <p className="font-bold">Upload your background picture</p>
+                            <div className=" bg-white w-full border border-[#bababa] rounded-lg h-[156px] flex flex-col items-center justify-center">
+                                <img src={DragPlus} alt="drag.png" />
+                                <p className="text-[#bababa]">upload or drag here</p>
+                            </div>
+                            <input onChange={handleImageChange} className="hidden" type="file" />
+                        </label>
+
+                        {/* close btn  */}
+                        <div onClick={handleModal} className='bg-gray-300 hover:bg-gray-200 rounded-full p-1 absolute right-2 top-2 cursor-pointer'>
+                            <img className='w-[20px] h-[20px]' src={CloseImage} alt="close button" />
+                        </div>
+                    </div>
+
+                </div>
+            }
+
         </div>
     )
 }
