@@ -93,7 +93,7 @@ const StoreCoin = () => {
             {
                 isOpen && <div onClick={handleOverlay} className='bg-black/30 fixed inset-0 backdrop-blur-sm z-100 flex items-end sm:items-center justify-center'>
                     {/* madal contont  */}
-                    <div className='w-[95%] sm:w-[500px] h-[300px] bg-white rounded-lg flex items-center justify-center flex-col space-y-3 relative'>
+                    <div className='w-full sm:w-[500px] h-[300px] bg-white rounded-lg flex items-center justify-center flex-col space-y-3 relative'>
                         <p className='sm:text-lg font-semibold text-sm'>BUY PURPLE VERIFICATION ICON</p>
 
                         <div className='w-[95%] sm:w-[90%] flex items-center justify-center flex-col space-y-3'>

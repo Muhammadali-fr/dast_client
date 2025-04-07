@@ -64,23 +64,22 @@ const Store = () => {
                 isOpen && <div onClick={handleBack} className='fixed inset-0 backdrop-blur-sm bg-black/30 flex sm:items-center items-end justify-center z-100'>
 
                     {/* madal contont  */}
-                    <div className='w-[95%] sm:w-[500px] h-[300px] bg-white rounded-lg flex items-center justify-center flex-col space-y-3 relative'>
+                    <div className='w-full sm:w-[500px] h-[300px] bg-white rounded-lg flex items-center justify-center flex-col space-y-3 relative'>
                         <p className='text-lg font-semibold'>Contact</p>
 
-                        <form className='w-[95%] sm:w-[90%] flex flex-col space-y-3'>
-
+                        <form className='w-[90%] flex flex-col space-y-3'>
                             {/* email  */}
-                            <label className='text-[#393939]'>
-                                email <span className='text-blue-800'>*</span>
-                                <input placeholder='email' className='text-black w-full border border-[#636363] rounded-md p-2' type="text" />
+                            <label className='text-[#393939] flex flex-col gap-1'>
+                                <p>email <span className='text-blue-800'>*</span></p>
+                                <input placeholder='email' className='text-black w-full border border-[#636363] rounded-lg p-2' type="text" />
                             </label>
 
                             {/* textarea  */}
-                            <label className='flex flex-col text-[#393939]'>
+                            <label className='flex flex-col gap-1 text-[#393939]'>
                                 <p>message here <span className='text-blue-800'>*</span></p>
-                                <textarea placeholder='message here' className='text-black border border-[#636363] rounded-md p-2'></textarea>
+                                <textarea placeholder='message here' className='text-black border border-[#636363] rounded-lg p-2'></textarea>
                             </label>
-                            <button className='p-2 rounded-lg text-white cursor-pointer bg-linear-to-r from-[#4A249D] to-[#7D41FF] hover:opacity-90'>Send</button>
+                            <button className='p-2  rounded-2xl text-white cursor-pointer bg-linear-to-r from-[#4A249D] to-[#7D41FF] hover:opacity-90'>Send</button>
                         </form>
 
                         {/* close btn  */}
