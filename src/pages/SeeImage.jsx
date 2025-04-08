@@ -26,11 +26,10 @@ const SeeImage = () => {
         <div className='w-[95%] mx-auto min-h-screen'>
             {mainImg ? (
                 <div className='space-y-10'>
-                    {/* Showing main image */}
-                    <div className='max-w-[900px]  mx-auto flex justify-around my-5 gap-5'>
-                        <div className='flex items-start gap-5 rounded-lg overflow-hidden'>
-                            <img className='rounded-lg mx-auto w-full max-w-[350px] object-cover' src={mainImg.image} alt="Main" />
-                        </div>
+
+                    {/* main image  */}
+                    <div>
+                        <img className='w-[400px]' src={mainImg.image} alt="" />
                     </div>
 
                     {/* Recommended Images */}

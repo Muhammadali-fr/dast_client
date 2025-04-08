@@ -52,7 +52,7 @@ const Home = () => {
               key={index}
               className={`px-2 py-1 border rounded-lg cursor-pointer transition-all duration-200 whitespace-nowrap
     ${filter === filterBtn.category
-                  ? "bg-[#4A249D] text-white border-[#4A249D]"
+                  ? "bg-[#7008e7] text-white border-[#7008e7]"
                   : "bg-white text-[#8d8d8e] border-[#bebebe] hover:border-[#4A249D] hover:text-[#4A249D]"
                 }`}
             >
