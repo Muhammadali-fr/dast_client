@@ -40,7 +40,7 @@ const RandomImage = () => {
 
 
     return (
-        <div className='w-[95%] min-h-screen mx-auto flex justify-center my-5'>
+        <div className='w-[95%] mx-auto flex justify-center my-5'>
 
 
             {/* view  */}
@@ -50,7 +50,7 @@ const RandomImage = () => {
                 <div className='h-full md:max-w-[80%] relative'>
 
                     {/* description */}
-                    <div className='rounded-2xl w-full h-[100px] bg-linear-to-b from-[#525252] to-[#73737300] absolute top-0 flex items-start p-5 justify-between'>
+                    <div className='rounded-2xl w-full h-[100px] bg-linear-to-b from-[#00000092] to-[#73737300] absolute top-0 flex items-start p-5 justify-between'>
                         <p className='text-white '>USA flag wallpaper</p>
 
                         <div className='cursor-pointer'>

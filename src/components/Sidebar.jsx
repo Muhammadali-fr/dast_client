@@ -39,8 +39,8 @@ const Sidebar = () => {
     return (
         <>
             <div className="sidebar-hidden">
-                {isFull ? <div className=' min-w-[220px] w-[220px] h-screen sticky top-0   '>
-                    <div className=" p-4 bg-linear-to-l from-[#4A249D] to-[#7D41FF] flex items-center justify-between">
+                {isFull ? <div className=' min-w-[220px] w-[220px] h-screen sticky top-0 flex flex-col'>
+                    <div className="p-4 bg-linear-to-l from-[#4A249D] to-[#7D41FF] flex items-center justify-between">
                         <Link to='/'>
                             <img className="w-[90px]" src={Logo} alt="logoimg" />
                         </Link>
@@ -49,7 +49,7 @@ const Sidebar = () => {
                         </div>
                     </div>
 
-                    <div className="border-r border-[#BABABA] h-screen">
+                    <div className="border-r border-[#BABABA] flex-1">
                         <ul className="w-[90%] mx-auto flex flex-col gap-2 py-2">
                             <NavLink className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
                                 <li className="w-full flex items-center gap-1">

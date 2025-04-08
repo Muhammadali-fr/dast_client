@@ -25,6 +25,7 @@ import AddPost from './pages/AddPost'
 
 // context
 import { UserProvider } from "./userContext";
+import Exemple from './pages/Exemple'
 
 const App = () => {
 
@@ -46,6 +47,7 @@ const App = () => {
           <Route path='random/:id' element={<RandomImage />}></Route>
           <Route path='store' element={<Store />}></Route>
           <Route path='store/coin' element={<StoreCoin />}></Route>
+          <Route path='ex' element={<Exemple />}></Route>
 
           {/* Not Found Page  */}
           <Route path='*' element={<NotFound />}></Route>
