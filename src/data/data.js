@@ -18,32 +18,32 @@ export const gallery = [
   {
     id: 0,
     image: img0,
-    tag: ["desktop wallpaper"],
+    tag: ["anime"],
   },
   {
     id: 1,
     image: img1,
-    tag: ["development theme", "phone wallpaper"],
+    tag: ["anime"],
   },
   {
     id: 2,
     image: img2,
-    tag: ["development theme", "phone wallpaper"],
+    tag: ["anime"],
   },
   {
     id: 3,
     image: img3,
-    tag: ["development theme", "phone wallpaper", "desktop wallpaper", "anime"],
+    tag: ["gaming"],
   },
   {
     id: 4,
     image: img4,
-    tag: ["development theme", "desktop wallpaper"],
+    tag: ["gaming"],
   },
   {
     id: 5,
     image: img5,
-    tag: ["phone wallpaper"],
+    tag: ["gaming"],
   },
   {
     id: 6,
