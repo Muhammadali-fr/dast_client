@@ -12,6 +12,7 @@ import img10 from "../assets/pics/img10.png";
 import img11 from "../assets/pics/img11.png";
 import img12 from "../assets/pics/img12.png";
 import img13 from "../assets/pics/img13.png";
+import img14 from "../assets/pics/img14.png";
 
 // pics for home
 export const gallery = [
@@ -48,17 +49,17 @@ export const gallery = [
   {
     id: 6,
     image: img6,
-    tag: ["development theme", "phone wallpaper"],
+    tag: ["desktop wallpaper"],
   },
   {
     id: 7,
     image: img7,
-    tag: ["development theme", "phone wallpaper"],
+    tag: ["desktop wallpaper"],
   },
   {
     id: 8,
     image: img8,
-    tag: ["phone wallpaper", "anime"],
+    tag: ["desktop wallpaper"],
   },
   {
     id: 9,
@@ -68,12 +69,12 @@ export const gallery = [
   {
     id: 10,
     image: img10,
-    tag: ["anime", "desktop wallpaper"],
+    tag: ["phone wallpaper"],
   },
   {
     id: 11,
     image: img11,
-    tag: ["car", "desktop wallpaper"],
+    tag: [ "phone wallpaper"],
   },
   {
     id: 12,
@@ -83,7 +84,12 @@ export const gallery = [
   {
     id: 13,
     image: img13,
-    tag: ["car", "desktop wallpaper"],
+    tag: ["car", "phone wallpaper"],
+  },
+  {
+    id: 14,
+    image: img14,
+    tag: ["car", "phone wallpaper"],
   },
 ];
 
@@ -99,13 +105,13 @@ export const filterButtons = [
     category: "GAMING",
   },
   {
-    category: "DEVELOPMENT THEME",
-  },
-  {
     category: "DESKTOP WALLPAPER",
   },
   {
     category: "PHONE WALLPAPER",
+  },
+  {
+    category: "CAR",
   },
 ];
 
