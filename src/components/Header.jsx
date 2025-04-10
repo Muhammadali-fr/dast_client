@@ -71,14 +71,14 @@ const Header = () => {
 
           {/* modal  */}
           <div className="relative">
-            <img onClick={handleProfile} className={popUp ? "border-2 rounded-full  border-[#7008e7] w-[42px] min-w-[42px] cursor-pointer" : "border-2 rounded-full border-[#ffffff] w-[42px] min-w-[42px] cursor-pointer"} src={Profile} alt="Profile" />
+            <img onClick={handleProfile} className={popUp ? "border-2 rounded-full  border-[#7008e7] w-[42px] h-[42px] object-cover object-center min-w-[42px] cursor-pointer" : "border-2 rounded-full border-[#ffffff] w-[42px] min-w-[42px] cursor-pointer  h-[42px] object-cover object-center"} src={Profile} alt="Profile" />
             {popUp &&
               // overlay 
-              <div >
-                <div className="absolute flex flex-col gap-2 top-12 right-0 w-[250px] bg-[#e3e3e3] p-2 border border-[#BABABA] rounded-lg z-10">
+              <div>
+                <div className="absolute flex flex-col gap-2 top-12 right-0 w-[250px] bg-[#e3e3e3] p-2 border border-[#BABABA] rounded-lg z-200">
                   {user &&
                     <div className="flex items-center gap-2 bg-white p-2 rounded-lg">
-                      <img className="w-[50px]" src={UserImage} alt="userImage" />
+                      <img className="w-[50px] h-[50px]" src={UserImage} alt="userImage" />
                       <p className="font-bold">{user.name}</p>
                     </div>}
                   <button onClick={handleLogout} title="logout of your account." className="w-full bg-violet-700 text-white p-2 rounded-lg cursor-pointer hover:bg-violet-600">{isLoading ? <Loader /> : "Logout"}</button>

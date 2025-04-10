@@ -25,7 +25,7 @@ const UserProvider = ({ children }) => {
         };
         takeDoc();
     }, []);
-    
+
     return (
         <UserContext.Provider value={{ user, setUser }}>
             {children}

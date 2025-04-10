@@ -45,13 +45,13 @@ const Profile = () => {
             <div className='w-full h-[178px] bg-[#e3e3e3] rounded-md relative border border-[#BABABA] bg-cover bg-center' style={{ backgroundImage: `url(${bgImage ? bgImage : BgImg})` }}>
 
                 {/* settings  */}
-                <div onClick={handleModal} className='w-[42px] h-[42px] p-1 bg-white flex items-center justify-center rounded-lg border border-[#b8b8b8] absolute right-5 top-5 cursor-pointer'>
+                <div onClick={handleModal} className='w-[35px] h-[35px] p-1 bg-white flex items-center justify-center rounded-lg border border-[#b8b8b8] absolute right-5 top-5 cursor-pointer'>
                     <img src={SettingsImg} alt="SettingsImg" />
                 </div>
 
                 {/* profile pic  */}
                 <div className='w-[100px] h-[100px] rounded-full overflow-hidden absolute top-[120px] left-1/2 transform -translate-x-1/2'>
-                    <img className='object-cover' src={ValentineImg} alt="profileImg" />
+                    <img className='object-cover object-center' src={ValentineImg} alt="profileImg" />
                 </div>
             </div>
 
@@ -97,7 +97,7 @@ const Profile = () => {
                                         alt={img.tag}
                                     />
                                     <div className="flex items-center gap-2 absolute bottom-0 bg-black/10 w-full p-1 text-white backdrop-blur-sm">
-                                        <img className="w-[20px] rounded-full" src={valentineImage} alt="" />
+                                        <img className="w-[20px] h-[20px] object-cover object-center rounded-full" src={valentineImage} alt="" />
                                         <p className='text-sm'>mukhammadali</p>
                                     </div>
                                 </Link>

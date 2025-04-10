@@ -26,7 +26,7 @@ const SavedPosts = () => {
                                 />
                             </Link>
                             <div className="flex items-center gap-2 absolute bottom-0 bg-black/20 w-full p-1 text-white backdrop-blur-sm">
-                                <img className="w-[30px] rounded-full" src={valentineImage} alt="" />
+                                <img className="w-[30px] h-[30px] object-cover object-center rounded-full" src={valentineImage} alt="" />
                                 <p>mukhammadali</p>
                             </div>
                         </div>

@@ -70,6 +70,7 @@ const Home = () => {
         </div>
         :
         (
+          // array images 
           <div className="max-w-full columns-2 sm:columns-4 lg:columns-6 my-5 gap-4">
 
             {
@@ -82,7 +83,7 @@ const Home = () => {
                       alt={img.tag}
                     />
                     <div className="flex items-center gap-2 absolute bottom-0 bg-black/10 w-full p-1 text-white backdrop-blur-sm">
-                      <img className="w-[20px] rounded-full" src={valentineImage} alt="" />
+                      <img className="w-[20px] h-[20px] object-cover object-center rounded-full" src={valentineImage} alt="" />
                       <p className='text-sm'>mukhammadali</p>
                     </div>
                   </Link>

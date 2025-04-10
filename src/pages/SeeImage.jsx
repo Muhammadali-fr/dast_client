@@ -166,7 +166,7 @@ const SeeImage = () => {
                     </div>
                 </div>
             ) : (
-                <div>Rasm topilmadi</div>
+                <div className='text-center'>Whoops there is not images matched.</div>
             )}
         </div>
     );

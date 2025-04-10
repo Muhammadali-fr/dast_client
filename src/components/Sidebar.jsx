@@ -79,7 +79,7 @@ const Sidebar = () => {
 
                             <NavLink to="/profile" className="p-2 rounded-md hover:bg-[#E3E3E3]">
                                 <li className="w-full flex items-center gap-1">
-                                    <img className="w-[24px]" src={Profile} alt="profile.png" />
+                                    <img className="w-[24px] h-[24px] object-cover object-center rounded-full" src={Valentine} alt="profile.png" />
                                     <p>Your profile</p>
                                 </li>
                             </NavLink>
@@ -98,21 +98,21 @@ const Sidebar = () => {
 
                             <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
                                 <li className="w-full flex items-center gap-1">
-                                    <img className="w-[24px] rounded-full" src={Valentine} alt="user.png" />
+                                    <img className="w-[24px] h-[24px] object-cover object-center rounded-full" src={Profile} alt="user.png" />
                                     <p>Funny valentine</p>
                                     <img className="w-[15px]" src={True} alt="true.jpg" />
                                 </li>
                             </Link>
                             <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
                                 <li className="w-full flex items-center gap-1">
-                                    <img className="w-[24px] rounded-full" src={Profile} alt="user.png" />
+                                    <img className="w-[24px] h-[24px] object-cover object-center rounded-full" src={Profile} alt="user.png" />
                                     <p>Darkens</p>
                                     <img className="w-[15px]" src={True} alt="true.jpg" />
                                 </li>
                             </Link>
                             <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
                                 <li className="w-full flex items-center gap-1">
-                                    <img className="w-[24px] rounded-full" src={Profile} alt="user.png" />
+                                    <img className="w-[24px] h-[24px] object-cover object-center rounded-full" src={Profile} alt="user.png" />
                                     <p>The Arty</p>
                                     <img className="w-[15px]" src={True} alt="true.jpg" />
                                 </li>
@@ -163,7 +163,7 @@ const Sidebar = () => {
 
                                 <NavLink to="/profile" className="p-2 rounded-md hover:bg-[#E3E3E3]">
                                     <li className="w-full flex items-center gap-1">
-                                        <img className="w-[24px]" src={Profile} alt="profile.png" />
+                                        <img className="w-[24px] h-[24px] rounded-full object-cover object-center" src={Valentine} alt="profile.png" />
                                     </li>
                                 </NavLink>
 
@@ -180,17 +180,17 @@ const Sidebar = () => {
 
                                 <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
                                     <li className="w-full flex items-center gap-1">
-                                        <img className="w-[24px] rounded-full" src={Valentine} alt="user.png" />
+                                        <img className="w-[24px] h-[24px] object-cover object-center rounded-full" src={Profile} alt="user.png" />
                                     </li>
                                 </Link>
                                 <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
                                     <li className="w-full flex items-center gap-1">
-                                        <img className="w-[24px] rounded-full" src={Profile} alt="user.png" />
+                                        <img className="w-[24px] h-[24px] object-cover object-center rounded-full" src={Profile} alt="user.png" />
                                     </li>
                                 </Link>
                                 <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
                                     <li className="w-full flex items-center gap-1">
-                                        <img className="w-[24px] rounded-full" src={Profile} alt="user.png" />
+                                        <img className="w-[24px] h-[24px] object-cover object-center rounded-full" src={Profile} alt="user.png" />
                                     </li>
                                 </Link>
                             </ul>
@@ -236,7 +236,7 @@ const Sidebar = () => {
 
                         <NavLink to="/profile" className="p-2 rounded-md hover:bg-[#E3E3E3]">
                             <li className="w-full flex items-center gap-1">
-                                <img className="w-[24px]" src={Profile} alt="profile.png" />
+                                <img className="w-[24px] h-[24px] object-center object-cover rounded-full" src={Valentine} alt="profile.png" />
                             </li>
                         </NavLink>
 
@@ -253,17 +253,17 @@ const Sidebar = () => {
 
                         <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
                             <li className="w-full flex items-center gap-1">
-                                <img className="w-[24px]" src={Valentine} alt="user.png" />
+                                <img className="w-[24px] h-[24px] object-cover object-center rounded-full" src={Profile} alt="user.png" />
                             </li>
                         </Link>
                         <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
                             <li className="w-full flex items-center gap-1">
-                                <img className="w-[24px]" src={Profile} alt="user.png" />
+                                <img className="w-[24px] h-[24px] object-cover object-center rounded-full" src={Profile} alt="user.png" />
                             </li>
                         </Link>
                         <Link className="p-2 rounded-md hover:bg-[#E3E3E3]" to="/">
                             <li className="w-full flex items-center gap-1">
-                                <img className="w-[24px]" src={Profile} alt="user.png" />
+                                <img className="w-[24px] h-[24px] object-cover object-center rounded-full" src={Profile} alt="user.png" />
                             </li>
                         </Link>
                     </ul>
