@@ -25,8 +25,6 @@ import { filterButtons } from "../data/data";
 
 
 const AddPost = () => {
-
-
     const [post, setPost] = useState(false)
     const [details, setDetails] = useState(false)
     const [language, setLanguage] = useState("post");
@@ -64,9 +62,6 @@ const AddPost = () => {
     }
 
     console.log(tags);
-
-
-
 
     return (
         <div className="w-[95%] min-h-screen mx-auto">
