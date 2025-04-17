@@ -109,14 +109,12 @@ const AddPost = () => {
                         </label>
 
                         {/* Description  */}
-
                         <label className="w-full flex flex-col gap-1">
                             <p className="font-bold">Description</p>
                             <textarea value={description} onChange={e => setDescription(e.target.value)} placeholder="description" className=" bg-white border border-[#BABABA] p-2 rounded-lg w-full max-h-[84px]"></textarea>
                         </label>
 
                         {/* tags  */}
-
                         <div className="space-y-3">
                             <p className="font-bold">Select tags</p>
                             <ul className="flex items-center overflow-scroll gap-2">

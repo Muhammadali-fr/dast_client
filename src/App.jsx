@@ -13,6 +13,7 @@ import SavedPosts from './pages/SavedPosts'
 import RandomImage from './pages/RandomImage'
 import Store from './pages/Store';
 import StoreCoin from './pages/StoreCoin'
+import Exemple from './pages/Exemple'
 
 // toaster 
 import { Toaster } from 'react-hot-toast'
@@ -25,7 +26,7 @@ import AddPost from './pages/AddPost'
 
 // context
 import { UserProvider } from "./userContext";
-import Exemple from './pages/Exemple'
+import { SearchProvider } from './searchContext'
 
 const App = () => {
 
@@ -64,15 +65,16 @@ const App = () => {
 
   return (
     <UserProvider>
+      <SearchProvider>
+        {/* Router  */}
+        <RouterProvider router={router} />
 
-      {/* Router  */}
-      <RouterProvider router={router} />
-
-      {/* Toaster  */}
-      <Toaster
-        position="top-right"
-        reverseOrder={false}
-      />
+        {/* Toaster  */}
+        <Toaster
+          position="top-right"
+          reverseOrder={false}
+        />
+      </SearchProvider>
     </UserProvider>
   )
 }

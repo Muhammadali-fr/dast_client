@@ -2,7 +2,7 @@
 import { useContext, useState } from "react"
 
 // react router dom 
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 // assets 
 import Bars from "../assets/bar.png"
@@ -12,6 +12,7 @@ import UserImage from "../assets/bottom/user.png"
 
 // useContex 
 import { UserContext } from "../userContext"
+import { SearchContext } from "../searchContext"
 
 // toast 
 import toast from "react-hot-toast"
@@ -23,14 +24,32 @@ import axios from "axios"
 import Loader from "./Loader"
 
 const Header = () => {
+
+  // useContext 
   const { user } = useContext(UserContext);
+  const { searchTerm, setSearchTerm } = useContext(SearchContext);
+
+  console.log(searchTerm);
+
 
   // states 
   const [popUp, setPopUp] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+  // navigate 
+  const navigate = useNavigate();
+
   const handleProfile = () => {
     setPopUp(!popUp)
+  }
+
+  // function for search input 
+  const handleInput = (e) => {
+    if (window.location.pathname == "/") {
+      return setSearchTerm(e)
+    }
+    navigate("/");
+    setSearchTerm(e);
   }
 
   const handleLogout = async () => {
@@ -54,7 +73,7 @@ const Header = () => {
       </div>
 
       <form className="w-full">
-        <input className="w-full h-[42px] border border-[#BABABA] rounded-md px-2" placeholder="serch anything..." type="text" />
+        <input value={searchTerm} onChange={e => handleInput(e.target.value)} className="w-full h-[42px] border border-[#BABABA] rounded-md px-2" placeholder="serch anything..." type="text" />
         <button className="hidden"></button>
       </form>
 
